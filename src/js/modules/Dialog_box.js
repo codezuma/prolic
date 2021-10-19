@@ -21,10 +21,13 @@ class DialogBox{
      this.dialogBox.getElementsByTagName('section')[0].innerHTML = htmlCode;
  }
  SwitchDialogBoxTo(htmlCode){
-    const tl = gsap.timeline();
-    tl.fromTo(this.dialogBoxSection,{x:0,opacity:1},{x:-300,opacity:0,duration:0.2});
-    tl.call(()=>{this.putDialogBox(htmlCode)},null,">");
-    tl.fromTo(this.dialogBoxSection,{x:300,opacity:0},{x:0,opacity:1,duration:0.2});
+    return new Promise((resolve)=>{
+        const tl = gsap.timeline();
+        tl.fromTo(this.dialogBoxSection,{x:0,opacity:1},{x:-300,opacity:0,duration:0.2});
+        tl.call(()=>{this.putDialogBox(htmlCode)},null,">");
+        tl.fromTo(this.dialogBoxSection,{x:300,opacity:0},{x:0,opacity:1,duration:0.2});
+        tl.call(()=>{resolve()},null,">");
+    })
  }
 }
 export {DialogBox};

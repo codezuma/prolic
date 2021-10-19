@@ -29,9 +29,9 @@ const signupFormHtmlData = `<h1  class="heading4 head flex">Sign up for a free<b
 <div class="already_memeber_button flex subtitle_text">
 <span>  Already a Member?<span> Signin</span></span>
 </div>`;
-const optFormHtmlData = ` <h1 class="title_text">Verify email address</h1>
+const optFormHtmlData = `  <h1 class="title_text">Verify email address</h1>
 <span style="text-align: center;margin-top: 1rem;" class=" body_text secondary_text font_weight_600">Code is sent to <span class="otp_email"></span>            </span><br>
-<form class="flex flex_direction_column opt_form " id="signUpOtpForm>
+<form class="flex flex_direction_column opt_form "  id='signUpOtpForm'>
 <div class="opt_in_wrap flex "> 
  <input maxlength="1" class="otp_input" type="text   ">
  <input maxlength="1" class="otp_input" type="text">
@@ -49,15 +49,19 @@ const signupForm = new FormBox(document.querySelector('.signup_form'), signupEma
 signupForm.afterSubmit = () => {
     signupForm.SubmittingForm();
     const signupFormData = new FormData(signupForm.form);
-    fetch('../../src/backend/request/request_otp.php', {
+    signupFormData.append('type','signup');
+    fetch('../../src/backend/otp/request_otp.php', {
         method: 'POST',
         body: signupFormData
     }).then((response) => {
         response.text().then((text) => {
             if(text){
-                dialogbox.SwitchDialogBoxTo(optFormHtmlData);
-                const signupOtpForm = new OtpFormBox(document.getElementById('signUpOtpForm'));
+                dialogbox.SwitchDialogBoxTo(optFormHtmlData).then(()=>{
+                    const signupOtpForm = new OtpFormBox(document.getElementById('signUpOtpForm'));
+                    signupOtpForm.afterSubmit = function(value){
 
+                    }
+                });
             }
             else{
                 signupEmailInput.showError('email already used try signing in');
@@ -67,5 +71,3 @@ signupForm.afterSubmit = () => {
 }
 dialogbox.showDialogBox();
 });
-const signupOtpForm = new OtpFormBox(document.getElementById('signUpOtpForm'));
-dialogbox.showDialogBox();

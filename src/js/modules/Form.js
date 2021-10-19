@@ -156,7 +156,7 @@ class FormBox {
 }
  class OtpFormBox{
      constructor(form){
-         const formObj = this;
+        const formObj = this;
         this.form = form;
         this.OTPInput();
         this.submitButton = this.form.querySelector('button[type="submit"]');
@@ -168,7 +168,7 @@ class FormBox {
         this.formValue = '';
      }
          OTPInput() {
-             this.form.addEventListener('submit',function(e){e.preventDefault(  )})
+           this.form.addEventListener('submit',function(e){e.preventDefault(  )})
             const inputs = this.form.querySelectorAll('.otp_input');
             for (let i = 0; i < inputs.length; i++) {
               inputs[i].addEventListener('keydown', function(event) {

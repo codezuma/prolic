@@ -7,6 +7,7 @@ require './../plugin/src/Exception.php';
 require './../plugin/src/PHPMailer.php';
 require './../plugin/src/SMTP.php';
 $email = $_POST['email'];
+$otp_type = $_POST['type'];
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
     //Server settings
@@ -28,14 +29,17 @@ $mail = new PHPMailer(true);
     $mail->SetFrom("patidarchandresh2002@gmail.com", "Prolic");
     $mail->Subject = "Prolic email verification OTP";
     // generating otp
-    $otp_pattern = '3698521475';
+    $otp_pattern = '43698521475';
     $otp_array = [];
-    $i;
-    for($i = 0;$i<4;$i++){
+    $i=0;
+    while(count($otp_array)<4){
       global $i;
       $otp_array[$i] = $otp_pattern[rand(0,strlen($otp_pattern))];
+      $i++; 
     }
+     
     $otp = implode($otp_array);
+    str_pad($otp, 4, "0", STR_PAD_LEFT);
     $content = "<section style='width: 100%;'>
                   <center  style='margin: 20px auto;max-width: 500px;'>
                     <img style='border-radius: 10px; width:100%;margin:0;' src='https://pixabay.com/get/g0f6a84e93643642933c27a923ad8fbc0e6d4af733b6537a5773d31790529b3ba11790cff039e9c40b40fb1930a15ff61_640.png'>
@@ -58,12 +62,32 @@ $mail = new PHPMailer(true);
    </section> ";
 
     //Attachments
-    $mail->MsgHTML($content); 
-    if(!$mail->Send()) {
-      echo 'false';
-    } else {
-      echo 'true';
+
+ $db = new mysqli("localhost","chandresh","codezuma","prolic");
+ if ($db->connect_error) {
+  echo "Connection failed: " . $db->connect_error;
+  }
+
+
+  function CheckUser($email){
+      global $db;
+      $userData =  $db->query("SELECT * FROM USERS WHERE email = '$email'");
+      return ($userData->num_rows===0);
+  }
+    if(CheckUser($email)){
+      $mail->MsgHTML($content); 
+      if(!$mail->Send()) {
+        echo 'false';
+      } else {
+        $SAVE_OTP_SQL_QUERY = "Insert INTO OTP(email,type,otp) VALUES ('$email','$otp_type','$otp')";
+        $db->query($SAVE_OTP_SQL_QUERY);
+        echo 'true';
+      }
     }
+    else{
+      echo 'user_available';
+    }
+  
     //Content
  /*    $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Here is the subject';
