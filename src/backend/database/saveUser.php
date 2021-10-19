@@ -16,7 +16,8 @@
       echo "user_saved";
      }
      else{
-       echo "email_used";
+       echo "email_already_used";
+       die();
      };
     }
    saveUser($email,$password);

@@ -117,7 +117,7 @@ class FormBox {
         const FormObj = this;
         this.form = form;
         this.inputBoxes = [...InputBoxes];
-        this.submitButton = form.querySelector("input[type = 'submit']");
+        this.submitButton = form.querySelector("button[type = 'submit']");
         this.submitButton.onclick = function(e) {
             e.preventDefault();
             FormObj.SubmitForm();
@@ -142,8 +142,70 @@ class FormBox {
         if (!this.ValidateForm()) { return false; };
         this.afterSubmit();
     }
-    SubmittingForm() {}
+    SubmittingForm() {
+        this.submitButton.innerHTML = '<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>';
+        this.submitButton.setAttribute('disabled', 'true');
+    }
+    SubmittedForm(callback_funtion = () => {}) {
+        this.submitButton.innerHTML = this.submitButton.getAttribute('value');
+        this.submitButton.removeAttribute('disabled');
+        callback_funtion();
+    }
+
 
 }
-
-export { inputBox, passwordInputBox, emailInputBox, FormBox };
+ class OtpFormBox{
+     constructor(form){
+         const formObj = this;
+        this.form = form;
+        this.OTPInput();
+        this.submitButton = this.form.querySelector('button[type="submit"]');
+        this.submitButton.onclick = function(e) {
+            e.preventDefault();
+            formObj.SubmitForm();
+        }
+        this.afterSubmit = function() {};
+        this.formValue = '';
+     }
+         OTPInput() {
+             this.form.addEventListener('submit',function(e){e.preventDefault(  )})
+            const inputs = this.form.querySelectorAll('.otp_input');
+            for (let i = 0; i < inputs.length; i++) {
+              inputs[i].addEventListener('keydown', function(event) {
+                if (event.key === "Backspace") {
+                  inputs[i].value = '';
+                  if (i !== 0)
+                    inputs[i - 1].focus();
+                } else {
+                  if (i === inputs.length - 1 && inputs[i].value !== '') {
+                    return true;
+                  } else if (event.keyCode > 47 && event.keyCode < 58) {
+                    inputs[i].value = event.key;
+                    if (i !== inputs.length - 1)
+                      inputs[i + 1].focus();
+                    event.preventDefault();
+                  } else if (event.keyCode > 96 && event.keyCode < 106) {
+                    inputs[i].value = event.key
+                    if (i !== inputs.length - 1)
+                      inputs[i + 1].focus();
+                    event.preventDefault();
+                  }else {
+                      event.preventDefault();
+                      return false;
+                  }
+                }
+                console.log(event.keyCode);
+              });
+            }
+          }
+          SubmitForm(){
+            const inputs = this.form.querySelectorAll('.otp_input');
+            for (let i = 0; i < inputs.length; i++) {
+                this.formValue += inputs[i].value;
+            }
+            this.afterSubmit(this.formValue);
+          }
+         
+     
+ }
+export { inputBox, passwordInputBox, emailInputBox, FormBox,OtpFormBox };

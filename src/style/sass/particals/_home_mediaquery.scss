@@ -1,0 +1,94 @@
+       @media only screen and (max-width: 1200px) {}
+       
+       @media only screen and (max-width: 1200px) {}
+       /* Large devices (laptops/desktops, 992px and up) */
+       
+       @media only screen and (max-width: 992px) {
+           .nav_bar {
+               nav li {
+                   display: none;
+               }
+               #signup_button {
+                   display: flex;
+               }
+           }
+           .floating_items {
+               display: none;
+           }
+           .hero_section {
+               background-image: none;
+               padding: 120px 2rem;
+           }
+       }
+       
+       @media only screen and (max-width: 768px) {
+           .hero_section_head {
+               @include heading2;
+           }
+           .hero_section_subhead {
+               @include subtitle_text;
+           }
+       }
+       
+       @media only screen and (max-width: 600px) {
+           .dialog_box_wrap {
+               #dialog_box {
+                   h1 {
+                       @include title_text;
+                   }
+                   input {
+                       @include body_text;
+                       &::placeholder {
+                           opacity: 0;
+                       }
+                   }
+               }
+            }
+           .hero_section{
+               height: auto;
+               min-height: 600px;
+               padding-bottom: 1rem;
+           }
+           .cta_wrap {
+               width: 95%;
+               
+           }
+           .hero_section_head {
+               @include heading3;
+               margin-top: 2rem;
+           }
+           .hero_section_subhead {
+               @include body_text;
+               margin-top: 1.5rem;
+           }
+       }
+       @media only screen and (max-width: 400px) {
+        .dialog_box_wrap {
+            #dialog_box {
+                input {
+                    @include body_text;
+                    &::placeholder {
+                        opacity: 0;
+                    }
+                }
+               
+            }
+         }
+        .hero_section{
+            height: auto;
+            min-height: 600px;
+            padding-bottom: 1rem;
+        }
+        .cta_wrap {
+            width: 95%;
+            
+        }
+        .hero_section_head {
+            @include heading3;
+            margin-top: 2rem;
+        }
+        .hero_section_subhead {
+            @include body_text;
+            margin-top: 1.5rem;
+        }
+    }

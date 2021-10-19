@@ -1,7 +1,11 @@
 .container{
+    max-width: 2000px;
     padding: 0 5%;
 }
 .flex{
     display: flex;
     align-items: center;
+}
+.flex_direction_column{
+    flex-direction: column;
 }
