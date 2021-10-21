@@ -1,5 +1,4 @@
-import { inputBox, passwordInputBox, emailInputBox, FormBox, DialogBox,OtpFormBox } from './modules/module.js';
-
+import { inputBox, passwordInputBox, emailInputBox, FormBox, DialogBox,OtpFormBox ,Backend} from './modules/module.js';
 const dialogbox = new DialogBox(document.getElementsByClassName('dialog_box_wrap')[0]);
 
 document.getElementById('signup_button').addEventListener('click', () => { 
@@ -50,24 +49,53 @@ signupForm.afterSubmit = () => {
     signupForm.SubmittingForm();
     const signupFormData = new FormData(signupForm.form);
     signupFormData.append('type','signup');
-    fetch('../../src/backend/otp/request_otp.php', {
-        method: 'POST',
-        body: signupFormData
-    }).then((response) => {
-        response.text().then((text) => {
-            if(text){
-                dialogbox.SwitchDialogBoxTo(optFormHtmlData).then(()=>{
-                    const signupOtpForm = new OtpFormBox(document.getElementById('signUpOtpForm'));
-                    signupOtpForm.afterSubmit = function(value){
-
-                    }
-                });
-            }
-            else{
-                signupEmailInput.showError('email already used try signing in');
-            }
-        })
-    });
+    localStorage.setItem('email',document.getElementById('signup_email_input').value);
+    localStorage.setItem('password',document.getElementById('signup_password_input').value);
+    function sendOtp (){
+        fetch('../../src/backend/otp/request_otp.php', {
+            method: 'POST',
+            body: signupFormData
+        }).then((response) => {
+            response.text().then((text) => {
+                switch (text) {
+                    case 'user_available':
+                        signupEmailInput.showError('email already used try signing in');
+                        signupForm.SubmittedForm();
+                        break;
+                    case 'mail_not_send':
+                        signupEmailInput.showError('something went wrong ');
+                          signupForm.SubmittedForm();
+                        break;
+                    case 'mail_send':
+                            dialogbox.SwitchDialogBoxTo(optFormHtmlData).then(()=>{
+                            const signupOtpForm = new OtpFormBox(document.getElementById('signUpOtpForm'));
+                            signupOtpForm.afterSubmit = function(value){
+                              signupFormData.append('otp',value);
+                              signupOtpForm.submitButton.innerHTML = 'Please wait...';
+                              fetch('../../src/backend/otp/verify_otp.php',{
+                                method: 'POST',
+                                body: signupFormData
+                              }).then(response=>{
+                                  response.text().then((text)=>{
+                                      if(text =='wrong_otp'){
+                                        signupOtpForm.submitButton.innerHTML = 'Incorrect verification code';
+                                      }
+                                      else{
+                                          signupOtpForm.submitButton.innerHTML = 'signup succesfull';   
+                                      }
+                                  })
+                              })
+                            }
+                        });
+                            break;
+                    default:
+                        break;
+                }
+            })
+        });  
+    }
+    
+    sendOtp();
 }
 dialogbox.showDialogBox();
 });

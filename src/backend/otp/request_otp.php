@@ -1,5 +1,7 @@
 <?php
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -29,15 +31,14 @@ $mail = new PHPMailer(true);
     $mail->SetFrom("patidarchandresh2002@gmail.com", "Prolic");
     $mail->Subject = "Prolic email verification OTP";
     // generating otp
-    $otp_pattern = '43698521475';
     $otp_array = [];
     $i=0;
+    $otp_arr =[];
     while(count($otp_array)<4){
-      global $i;
-      $otp_array[$i] = $otp_pattern[rand(0,strlen($otp_pattern))];
-      $i++; 
+        global $i,$otp_array;
+        $otp_array[$i] = rand(1,9);
+        $i++; 
     }
-     
     $otp = implode($otp_array);
     str_pad($otp, 4, "0", STR_PAD_LEFT);
     $content = "<section style='width: 100%;'>
@@ -77,18 +78,18 @@ $mail = new PHPMailer(true);
     if(CheckUser($email)){
       $mail->MsgHTML($content); 
       if(!$mail->Send()) {
-        echo 'false';
+        echo 'mail_not_send';
       } else {
         $SAVE_OTP_SQL_QUERY = "Insert INTO OTP(email,type,otp) VALUES ('$email','$otp_type','$otp')";
         $db->query($SAVE_OTP_SQL_QUERY);
-        echo 'true';
+        echo 'mail_send';
       }
     }
     else{
       echo 'user_available';
     }
   
-    //Content
+    //Content 
  /*    $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Here is the subject';
     $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
