@@ -65,7 +65,7 @@ $mail = new PHPMailer(true);
     //Attachments
 
  $db = new mysqli("localhost","chandresh","codezuma","prolic");
- if ($db->connect_error) {
+ if ($db->connect_error) {  
   echo "Connection failed: " . $db->connect_error;
   }
 

@@ -43,6 +43,7 @@ const optFormHtmlData = `  <h1 class="title_text">Verify email address</h1>
 dialogbox.putDialogBox(signupFormHtmlData);
 
 const signupEmailInput = new emailInputBox(document.getElementById('signup_email_input'));
+
 const signupPasswordInput = new passwordInputBox(document.getElementById('signup_password_input'));
 const signupForm = new FormBox(document.querySelector('.signup_form'), signupEmailInput, signupPasswordInput);
 signupForm.afterSubmit = () => {
@@ -52,11 +53,12 @@ signupForm.afterSubmit = () => {
     localStorage.setItem('email',document.getElementById('signup_email_input').value);
     localStorage.setItem('password',document.getElementById('signup_password_input').value);
     function sendOtp (){
-        fetch('../../src/backend/otp/request_otp.php', {
+        fetch('./src/backend/otp/request_otp.php', {
             method: 'POST',
             body: signupFormData
         }).then((response) => {
             response.text().then((text) => {
+                console.log(text);
                 switch (text) {
                     case 'user_available':
                         signupEmailInput.showError('email already used try signing in');
@@ -72,16 +74,18 @@ signupForm.afterSubmit = () => {
                             signupOtpForm.afterSubmit = function(value){
                               signupFormData.append('otp',value);
                               signupOtpForm.submitButton.innerHTML = 'Please wait...';
-                              fetch('../../src/backend/otp/verify_otp.php',{
+                              fetch('./src/backend/otp/verify_otp.php',{
                                 method: 'POST',
                                 body: signupFormData
                               }).then(response=>{
                                   response.text().then((text)=>{
+                                      console.log(text);
                                       if(text =='wrong_otp'){
                                         signupOtpForm.submitButton.innerHTML = 'Incorrect verification code';
                                       }
                                       else{
-                                          signupOtpForm.submitButton.innerHTML = 'signup succesfull';   
+                                        signupOtpForm.submitButton.innerHTML = 'signup succesfull';   
+                                        location.assign("./src/sidePages/dashboard.html")
                                       }
                                   })
                               })
