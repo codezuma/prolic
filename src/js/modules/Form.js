@@ -27,9 +27,9 @@ class inputBox {
             inputBoxObject.errorBox.querySelector('.error_box_icon').style.stroke = iconColor;
         }
         if (error_message_para) {
-            show_message_box(this, error_message_para, 'var(--red_color)', alertIcon);
+            show_message_box(this, error_message_para, 'var(--warning)', alertIcon);
         } else {
-            show_message_box(this, ' ', 'var(--green_color)', checkIcon);
+            show_message_box(this, ' ', 'var(--success)', checkIcon);
         }
     }
     emptyInputValidater() {

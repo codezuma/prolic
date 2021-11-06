@@ -4,9 +4,115 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../style/css/dashboard.css">
+    <link rel="icon" href="../images/app_icon.svg" sizes="32x32">
+    <title>My Drive-Prolic</title>
 </head>
 <body>
+    <div id="app_wrap">
+        <aside id="nav_bar" data-state="maximized">
+            <button class="size_toggle_btn flex"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+            <div class="app_icon_con">
+                <img src="../images/app_logo.svg" alt="">
+            </div>
+            <nav class="flex"> 
+                <div class="nav_item flex" data-state="active" >
+                    <span class="nav_icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span>
+                    <span class="nav_text">Dashboard</span>
+                </div>
+                <div class="nav_item flex" data-state="" >
+                    <span class="nav_icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></span>
+                    <span class="nav_text">My Files</span>
+                </div>
+                <div class="nav_item flex" data-state="" >
+                    <span class="nav_icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></span>
+                    <span class="nav_text">Shared Files</span>
+                </div>
+                <div class="nav_item flex" data-state="" >
+                    <span class="nav_icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span class="nav_text">Starred</span>
+                </div>
+                <div class="nav_item flex" data-state="" >
+                    <span class="nav_icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></span>
+                    <span class="nav_text">Trash</span>
+                </div>
+            </nav>
+        </aside>
+        <header class="flex">
+            <form action="">
+                <div class="input_section" data-inputElement="search_bar">
+                    <div class="input_section_ele_wrapper flex">
+                        <input id='search_bar' class="input_section_ele" type="search"  name="search_query" placeholder="Search here">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="input_section_ele_icon input_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </div>
+                </div>
+            </form>
+            <div class="profile_header_section">
+                <div class="profile_icon">
+                </div>
+            </div>
+        </header>
+        <main  id="dashboard_section">
+            <div class="header">
+            </div>
+        </main>
+        <aside id="user_section">
+            <div class="user_section_wrap">
+                <div class="data_section">
+                    <h2><span class="data_used">2.98 GB</span>&nbsp;&nbsp;   used of &nbsp;&nbsp;<span class="total_data">5.8 GB</span></h2>
+                    <div class="data_bar_con flex">
+                        <div class="data_bar_item" data-file_name=""></div>
+                        <div class="data_bar_item" data-file_name=""></div>
+                        <div class="data_bar_item" data-file_name=""></div>
+                        <div class="data_bar_item" data-file_name=""></div> 
+                    </div>
     
+                </div>
+                <div class="files_section">
+                    <div class="file_item" data-file_name="image">
+                        <div class="file_data flex">
+                            <img src="../images/image_icon.svg" class="file_icon" alt="">
+                            <div>
+                                <div class="file_name">Images</div>
+                                <div class="num_of_files">54 files</div>
+                            </div>
+                            <div class="file_size">2.5 GB</div>
+                        </div>
+                    </div>
+                    <div class="file_item" data-file_name="image">
+                        <div class="file_data flex">
+                            <img src="../images//video_icon.svg" class="file_icon" alt="">
+                            <div>
+                                <div class="file_name">Video</div>
+                                <div class="num_of_files">7 files</div>
+                            </div>
+                            <div class="file_size">3.5 GB</div>
+                        </div>
+                    </div>
+                    <div class="file_item" data-file_name="image">
+                        <div class="file_data flex">
+                            <img src="../images/pdf_file_icon.svg" class="file_icon" alt="">
+                            <div>
+                                <div class="file_name">Pdf</div>
+                                <div class="num_of_files">18 files</div>
+                            </div>
+                            <div class="file_size">0.5 GB</div>
+                        </div>
+                    </div>
+                    <div class="file_item" data-file_name="image">
+                        <div class="file_data flex">
+                            <img src="../images/text_file.svg" class="file_icon" alt="">
+                            <div>
+                                <div class="file_name">Other files</div>
+                                <div class="num_of_files">23 files</div>
+                            </div>
+                            <div class="file_size">0.3 GB</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </aside>
+    </div>
+    <script type="module" src="../js/dashboard.js"></script>
 </body>
-</html>

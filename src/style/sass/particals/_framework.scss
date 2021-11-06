@@ -1,3 +1,11 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--primary_text);
+}
+
 .container{
     max-width: 2000px;
     padding: 0 5%;

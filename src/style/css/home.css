@@ -1,0 +1,794 @@
+/* blue_color600:
+$blue_color500:#4E57D3;
+$secondary_color:#7883FF;
+$primary_text:#262626;
+$secondary_text:#6E7087;
+$disable_text:#8c8c8c;
+$outline:#d9d9d9;
+$white_color:#fff; */
+/* line 9, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
+:root {
+  --blue_color600: #0A1966;
+  --blue_color300:#3A4063;
+  --blue_color500:#4E57D3;
+  --blue_color400:#7883FF;
+  --blue_color100:#DBD9E6;
+  --secondary_color:#7883FF;
+  --primary_text:#212327;
+  --secondary_text:#8F9192;
+  --disable_text:#8c8c8c;
+  --outline:#d9d9d9;
+  --grey:#F5F5F5;
+  --grey100:#e4e4e4;
+  --grey200:#efefef;
+  --white_color:#fdfdfd;
+  --pure_white:#fff;
+  --red_color:#FF4642;
+  --yellow_color:#FFC94B;
+  --purple_color:#8A38CB;
+  --warning:rgb(177, 4, 4);
+  --success:rgb(0, 105, 49);
+}
+
+/* line 31, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
+.primary_text {
+  color: var(--primary_text);
+}
+
+/* line 34, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
+.secondary_text {
+  color: var(--secondary_text);
+}
+
+/* line 37, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
+.primary_text {
+  color: var(--primary_text);
+}
+
+/* line 1, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_font.scss */
+.heading1 {
+  font-size: 3.75rem;
+  line-height: 4.875rem;
+}
+
+/* line 6, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_font.scss */
+.heading2 {
+  font-size: 3rem;
+  line-height: 3.4rem;
+}
+
+/* line 11, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_font.scss */
+.heading3 {
+  font-size: 2.375rem;
+  line-height: 3.325rem;
+}
+
+/* line 16, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_font.scss */
+.heading4 {
+  font-size: 2rem;
+  line-height: 2.8rem;
+}
+
+/* line 21, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_font.scss */
+.title_text {
+  font-size: 1.5rem;
+  line-height: 2.1rem;
+}
+
+/* line 26, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_font.scss */
+.subtitle_text {
+  font-size: 1.2rem;
+  line-height: 1.68rem;
+}
+
+/* line 31, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_font.scss */
+.body_text {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+/* line 36, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_font.scss */
+.caption_text {
+  font-size: 0.875rem;
+  line-height: 1.225rem;
+}
+
+/* line 41, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_font.scss */
+.tiny_text {
+  font-size: 0.75rem;
+  line-height: 1.05rem;
+}
+
+/* line 89, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_font.scss */
+.font_weight_200 {
+  font-weight: 500;
+}
+
+/* line 92, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_font.scss */
+.font_weight_300 {
+  font-weight: 500;
+}
+
+/* line 95, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_font.scss */
+.font_weight_400 {
+  font-weight: 500;
+}
+
+/* line 98, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_font.scss */
+.font_weight_500 {
+  font-weight: 500;
+}
+
+/* line 101, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_font.scss */
+.font_weight_600 {
+  font-weight: 600;
+}
+
+/* line 105, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_font.scss */
+.font_weight_700 {
+  font-weight: 700;
+}
+
+/* line 108, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_font.scss */
+.font_weight_800 {
+  font-weight: 800;
+}
+
+/* line 111, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_font.scss */
+.font_weight_900 {
+  font-weight: 900;
+}
+
+/* line 1, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_framework.scss */
+* {
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--primary_text);
+}
+
+/* line 9, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_framework.scss */
+.container {
+  max-width: 2000px;
+  padding: 0 5%;
+}
+
+/* line 13, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_framework.scss */
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+/* line 17, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_framework.scss */
+.flex_direction_column {
+  flex-direction: column;
+}
+
+/* line 1, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_loader.scss */
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+/* line 8, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_loader.scss */
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+/* line 18, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_loader.scss */
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+
+/* line 23, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_loader.scss */
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+/* line 28, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_loader.scss */
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+/* line 33, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_loader.scss */
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+/* line 2, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_inputElements.scss */
+.input_section {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+/* line 7, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_inputElements.scss */
+.input_section:hover .input_section_ele {
+  border-color: var(--disable_text);
+}
+
+/* line 11, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_inputElements.scss */
+.input_section_head {
+  font-size: 0.8rem;
+  line-height: 1.12rem;
+  font-weight: 600;
+  color: var(--primary_text);
+}
+
+/* line 17, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_inputElements.scss */
+.input_section_ele {
+  font-size: 1rem;
+  line-height: 1.4rem;
+  transition: .3s;
+  height: 50px;
+  width: 100%;
+  border: 2px solid var(--grey100);
+  border-radius: 5px;
+  padding: 0 5%;
+  padding-left: calc(5% + 40px);
+  position: absolute;
+  outline: none;
+  color: var(--primary_text);
+  caret-color: var(--primary_text);
+}
+
+/* line 32, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_inputElements.scss */
+.input_section_ele_icon {
+  position: absolute;
+  left: 15px;
+  stroke: var(--disable_text);
+  z-index: 1;
+}
+
+/* line 39, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_inputElements.scss */
+.input_section_ele:focus {
+  border-color: var(--blue_color500) !important;
+  color: var(--primary_text) !important;
+}
+
+/* line 44, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_inputElements.scss */
+.input_section_ele:focus ~ .input_section_ele_icon {
+  stroke: var(--blue_color500) !important;
+}
+
+/* line 48, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_inputElements.scss */
+.input_section_ele_wrapper {
+  width: 100%;
+  position: relative;
+  height: 50px;
+  margin-top: .3rem;
+}
+
+/* line 55, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_inputElements.scss */
+.input_message_box {
+  opacity: 0;
+  width: 100%;
+  height: 32px;
+  padding: 0.3rem .5rem;
+  color: var(--warning);
+}
+
+/* line 63, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_inputElements.scss */
+.input_message_box svg {
+  stroke: var(--warning);
+}
+
+/* line 67, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_inputElements.scss */
+.error_message_text {
+  font-size: 0.8rem;
+  line-height: 1.12rem;
+  margin-left: 1rem;
+  color: var(--warning);
+  font-weight: 500;
+}
+
+/* line 74, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_inputElements.scss */
+.eye_icon {
+  right: 15px;
+  position: absolute;
+  stroke: #808D9E;
+  z-index: 1;
+  cursor: pointer;
+}
+
+/* line 82, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_inputElements.scss */
+button[type='submit']:active {
+  scale: 0.9;
+}
+
+/* line 7, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+html {
+  font-size: 16px;
+}
+
+/* line 11, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+body {
+  overflow-x: hidden;
+  position: relative;
+  justify-content: center;
+}
+
+/* line 17, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.nav_bar {
+  top: 0;
+  user-select: none;
+  position: fixed;
+  justify-content: space-between;
+  padding: 1.5% 5%;
+  z-index: 2;
+  width: 100%;
+}
+
+/* line 25, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.nav_bar .logo_text {
+  font-weight: 700;
+  margin-left: 1rem;
+}
+
+/* line 28, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.nav_bar .logo_text span:nth-child(1) {
+  color: var(--blue_color600);
+}
+
+/* line 31, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.nav_bar .logo_text span:nth-child(2) {
+  color: var(--blue_color500);
+}
+
+/* line 35, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.nav_bar .nav_items {
+  font-weight: 700;
+  color: var(--primary_text);
+  min-width: 140px;
+  list-style: none;
+  cursor: pointer;
+  transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* line 42, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.nav_bar .nav_items:hover {
+  color: var(--secondary_color);
+}
+
+/* line 46, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.nav_bar #signup_button {
+  color: var(--white_color);
+  height: 45px;
+  border-radius: 5px;
+  justify-content: center;
+  background-color: var(--blue_color500);
+}
+
+/* line 55, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.hero_section {
+  padding: 120px 5%;
+  width: 100%;
+  position: relative;
+  min-height: 900px;
+  height: 100vh;
+  max-height: 1100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-image: url(.././images/hero_section_bg_image.svg);
+}
+
+/* line 66, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.hero_section .hero_section_head {
+  font-weight: 600;
+  margin-top: 8%;
+  z-index: 5;
+}
+
+/* line 70, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.hero_section .hero_section_head span:nth-of-type(even) {
+  color: var(--secondary_color);
+}
+
+/* line 74, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.hero_section .hero_section_subhead {
+  margin-top: 3rem;
+  z-index: 5;
+  font-weight: 600;
+  color: var(--secondary_text);
+}
+
+/* line 80, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.hero_section .cta_wrap {
+  margin-top: 3rem;
+  max-width: 539px;
+  height: 70px;
+  padding: 0 3%;
+  background-color: var(--white_color);
+  box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+}
+
+/* line 87, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.hero_section .cta_wrap form {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 91, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.hero_section .cta_wrap form input[type="email"] {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  height: 100%;
+  width: 100%;
+  color: var(--primary_text);
+  caret-color: var(--primary_text);
+  letter-spacing: 1px;
+}
+
+/* line 100, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.hero_section .cta_wrap form input[type="email"]::placeholder {
+  color: var(--secondary_text);
+}
+
+/* line 104, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.hero_section .cta_wrap form input[type="submit"] {
+  width: 160px;
+  height: 45px;
+  background-color: var(--blue_color500);
+  color: var(--white_color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* line 115, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.hero_section .floating_items {
+  position: absolute;
+  z-index: 0;
+  justify-content: center;
+}
+
+/* line 120, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.hero_section .video_icon,
+.hero_section .text_icon {
+  width: 60px;
+  top: 602px;
+  left: 70%;
+  height: 60px;
+  background-color: #8A38CB;
+  border-radius: 5px;
+}
+
+/* line 128, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.hero_section .video_icon img,
+.hero_section .text_icon img {
+  width: 30px;
+  height: 30px;
+}
+
+/* line 133, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.hero_section .pdf_icon {
+  font-weight: 700;
+  width: 70px;
+  top: 450px;
+  border-radius: 10px;
+  left: 60%;
+  height: 70px;
+  color: var(--white_color);
+  background-color: #FF7A77;
+}
+
+/* line 143, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.hero_section .zip_icon {
+  width: 100px;
+  height: 100px;
+  background-color: #FDCE62;
+  color: var(--white_color);
+  border-radius: 15px;
+  left: 50%;
+  top: 700px;
+  font-weight: 700;
+}
+
+/* line 153, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.hero_section .text_icon {
+  background-color: #6FA0FE;
+  top: 680px;
+  left: 20%;
+}
+
+/* line 157, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.hero_section .text_icon img {
+  width: 40px;
+  height: 40px;
+}
+
+/* line 164, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.dialog_box_wrap {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  justify-content: center;
+  z-index: 10;
+  top: 0;
+  display: flex;
+}
+
+/* line 172, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.dialog_box_wrap[data-close] {
+  display: none;
+}
+
+/* line 175, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.dialog_box_wrap #dialog_box {
+  padding: 2rem;
+  width: 85%;
+  overflow: hidden;
+  max-width: 500px;
+  min-width: 280px;
+  height: auto;
+  border-radius: 20px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  background-color: var(--pure_white);
+}
+
+/* line 189, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.dialog_box_wrap #dialog_box section {
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* line 194, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.dialog_box_wrap #dialog_box section .head {
+  font-weight: 700;
+  text-align: center;
+}
+
+/* line 200, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.dialog_box_wrap #dialog_box .close_dialog_button {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  stroke: var(--primary_text);
+  position: absolute;
+  top: .6rem;
+  right: .6rem;
+  cursor: pointer;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+
+/* line 211, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.dialog_box_wrap #dialog_box .close_dialog_button:hover {
+  background-color: rgba(73, 73, 73, 0.13);
+}
+
+/* line 215, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.dialog_box_wrap #dialog_box form {
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+/* line 220, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.dialog_box_wrap #dialog_box form button {
+  width: 100%;
+  height: 50px;
+  font-weight: 600;
+  color: var(--white_color);
+  background-color: var(--blue_color500);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* line 231, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.dialog_box_wrap #dialog_box form button:hover {
+  box-shadow: 3px 0px 6px rgba(94, 105, 126, 0.5), 0px 4px 6px rgba(94, 105, 126, 0.322);
+}
+
+/* line 234, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.dialog_box_wrap #dialog_box form button:active {
+  transform: scale(0.9);
+}
+
+/* line 237, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.dialog_box_wrap #dialog_box form button:disabled {
+  background-color: var(--disable_text);
+}
+
+/* line 241, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.dialog_box_wrap #dialog_box form #send_otp_again {
+  cursor: pointer;
+}
+
+/* line 244, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.dialog_box_wrap #dialog_box form .opt_in_wrap {
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+/* line 248, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.dialog_box_wrap #dialog_box form .opt_in_wrap .otp_input {
+  width: 18%;
+  height: 50px;
+  border: 2px solid var(--grey100);
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2.1rem;
+  outline: none;
+}
+
+/* line 256, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.dialog_box_wrap #dialog_box form .opt_in_wrap .otp_input:focus {
+  border-color: var(--blue_color500);
+}
+
+/* line 262, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.dialog_box_wrap #dialog_box .already_memeber_button {
+  font-weight: 600;
+  margin-top: 1rem;
+  color: var(--secondary_text);
+  margin-top: auto;
+  cursor: pointer;
+}
+
+/* line 268, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */
+.dialog_box_wrap #dialog_box .already_memeber_button:hover span {
+  text-decoration: underline;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+  /* line 8, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .nav_bar nav li {
+    display: none;
+  }
+  /* line 11, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .nav_bar #signup_button {
+    display: flex;
+  }
+  /* line 15, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .floating_items {
+    display: none;
+  }
+  /* line 18, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .hero_section {
+    background-image: none;
+    padding: 120px 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 25, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .hero_section_head {
+    font-size: 3rem;
+    line-height: 3.4rem;
+  }
+  /* line 28, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .hero_section_subhead {
+    font-size: 1.2rem;
+    line-height: 1.68rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /* line 36, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .dialog_box_wrap #dialog_box h1 {
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+  }
+  /* line 39, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .dialog_box_wrap #dialog_box input {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+  /* line 41, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .dialog_box_wrap #dialog_box input::placeholder {
+    opacity: 0;
+  }
+  /* line 47, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .hero_section {
+    height: auto;
+    min-height: 600px;
+    padding-bottom: 1rem;
+  }
+  /* line 52, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .cta_wrap {
+    width: 95%;
+  }
+  /* line 56, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .hero_section_head {
+    font-size: 2.375rem;
+    line-height: 3.325rem;
+    margin-top: 2rem;
+  }
+  /* line 60, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .hero_section_subhead {
+    font-size: 1rem;
+    line-height: 1.4rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  /* line 68, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .dialog_box_wrap #dialog_box input {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+  /* line 70, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .dialog_box_wrap #dialog_box input::placeholder {
+    opacity: 0;
+  }
+  /* line 77, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .hero_section {
+    height: auto;
+    min-height: 600px;
+    padding-bottom: 1rem;
+  }
+  /* line 82, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .cta_wrap {
+    width: 95%;
+  }
+  /* line 86, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .hero_section_head {
+    font-size: 2.375rem;
+    line-height: 3.325rem;
+    margin-top: 2rem;
+  }
+  /* line 90, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_home_mediaquery.scss */
+  .hero_section_subhead {
+    font-size: 1rem;
+    line-height: 1.4rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */

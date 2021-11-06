@@ -2,13 +2,7 @@
 @import './particals/font';
 @import './particals/framework';
 @import './particals/loader';
-* {
-    box-sizing: border-box;
-    font-family: 'Manrope', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: var(--primary_text);
-}
+@import "./particals/inputElements";
 
 html {
     font-size: 16px;
@@ -278,88 +272,5 @@ body {
     }
 }
 
-.input_section {
-    width: 100%;
-    margin-bottom: 0.5rem;
-}
-
-.input_section:hover .input_section_ele {
-    border-color: var(--disable_text)
-}
-
-.input_section_head {
-    @include caption_text;
-    font-weight: 600;
-    color: var(--primary_text);
-}
-
-.input_section_ele {
-    @include body_text;
-    transition: .3s;
-    height: 50px;
-    width: 100%;
-    border: 2px solid var(--grey100);
-    border-radius: 5px;
-    padding: 0 5%;
-    padding-left: calc(5% + 40px);
-    position: absolute;
-    outline: none;
-    color: var(--primary_text);
-    caret-color: var(--primary_text);
-}
-
-.input_section_ele_icon {
-    position: absolute;
-    left: 15px;
-    stroke: var(--disable_text);
-    z-index: 1;
-}
-
-.input_section_ele:focus {
-    border-color: var(--blue_color500) !important;
-    color: var(--primary_text) !important;
-}
-
-.input_section_ele:focus~.input_section_ele_icon {
-    stroke: var(--blue_color500) !important;
-}
-
-.input_section_ele_wrapper {
-    width: 100%;
-    position: relative;
-    height: 50px;
-    margin-top: .3rem;
-}
-
-.input_message_box {
-    opacity: 0;
-    width: 100%;
-    height: 32px;
-    padding: 0.3rem .5rem;
-    color: var(--red_color);
-}
-
-.input_message_box svg {
-    stroke: var(--red_color);
-}
-
-.error_message_text {
-    @include caption_text;
-    margin-left: 1rem;
-    color: var(--red_color);
-    font-weight: 500;
-}
-
-.eye_icon {
-    right: 15px;
-    position: absolute;
-    stroke: #808D9E;
-    z-index: 1;
-    cursor: pointer;
-}
-
-button[type='submit']:active {
-    scale: 0.9;
-}
 
 @import './particals/home_mediaquery';
