@@ -11,6 +11,24 @@
     display: grid;
     grid-template-columns: var(--aside_width) 1fr var(--aside_width);
     grid-template-rows: 80px 1fr;
+    .file_icon {
+        background-size: cover;
+        &[data-file_type="pdf"] {
+            background-image: url(../../images/pdf_file_icon.svg);
+        }
+        &[data-file_type="image"] {
+            background-image: url(../../images/image_icon.svg);
+        }
+        &[data-file_type="video"] {
+            background-image: url(../../images/video_icon.svg);
+        }
+        &[data-file_type="other"] {
+            background-image: url(../../images/text_file.svg);
+        }
+        &[data-file_type="folder"] {
+            background-image: url(../../images/folder_icon.svg);
+        }
+    }
     header {
         grid-area: 1/2/2/4;
         display: flex;
@@ -182,7 +200,7 @@
         width: 100%;
         height: 100%;
         background-color: var(--grey);
-        padding: 20px 32px ;
+        padding: 20px 32px;
         .dashboard_item {
             width: 100%;
             height: 100%;
@@ -191,6 +209,7 @@
                 margin-bottom: 1rem;
                 font-weight: 700;
             }
+
             &[data-state="active"] {
                 display: block;
             }
@@ -198,85 +217,136 @@
                 display: none;
             }
             &[data-item_name="dashboard"] {
-                .quick_access_section{  
+                .quick_access_section {
                     width: 100%;
-                    .quick_items_con{
+                    margin-bottom: 2rem;
+                    .quick_items_con {
+                        flex-flow: wrap;
                         min-width: 100%;
-                        justify-content:flex-start;
+                        justify-content: flex-start;
                         gap: 2rem;
                     }
 
                     .quick_item {
-                        max-width: 160px;
-                        height: 160px;
+                        width: 160px;
+                        height: 150px;
                         display: flex;
                         align-items: center;
                         justify-content: left;
                         flex-direction: column;
-                        padding: 1rem ;
+                        padding: 1rem;
                         border: 2px solid var(--grey100);
                         border-radius: 10px;
                         transition: 0.3s;
                         transform-origin: center;
                         cursor: pointer;
-                        &:hover{
+                        &:hover {
                             background-color: var(--white_color);
                             border-color: transparent;
-                            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+                            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06),
+                                0px 0px 1px rgba(0, 0, 0, 0.04);
                         }
                         .quick_item_icon {
                             width: 60px;
                             height: 60px;
                             background-size: cover;
                             margin-bottom: 1rem;
-                            background-image: url(../../images/pdf_file_icon.svg);
-                            &[data-file_type="pdf"]{
-                                background-image: url(../../images/pdf_file_icon.svg);
-                            }
-                            &[data-file_type="image"]{
-                                background-image: url(../../images/image_icon.svg);
-                            }
-                            &[data-file_type="video"]{
-                                background-image: url(../../images/video_icon.svg);
-                            }
-                            &[data-file_type="other"]{
-                                background-image: url(../../images/text_file.svg);
-                            }
-                            &[data-file_type="folder"]{
-                                background-image: url(../../images/folder_icon.svg);
-                            }
-                             
                         }
-                       
+
                         .quick_item_file_name {
                             text-align: center;
-                            @include body_text;
-                            font-weight:semi-bold;
+                            @include caption_text;
+                            font-weight: semi-bold;
                             color: var(--secondary_text2);
                             width: 100%;
-                               /*  white-space: nowrap;
+                            /*  white-space: nowrap;
                                 text-overflow: ellipsis;
                                 overflow: hidden; */
-                                @supports (-webkit-line-clamp: 2) {
-                                    overflow: hidden;
-                                    text-overflow: ellipsis;
-                                    -webkit-line-clamp: 2;
-                                    display: -webkit-box;
-                                    -webkit-box-orient: vertical;
-                                }
-                              
+                            @supports (-webkit-line-clamp: 2) {
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                -webkit-line-clamp: 2;
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                            }
                         }
                     }
                 }
-                .folder_section{
-                    width: 100%;
-                    .folders_con{
+                .folder_section {
+                    max-width: 100%;
+                    margin-bottom: 2rem;
+                    .folders_con {
                         min-width: 100%;
-                        justify-content:flex-start;
+                        justify-content: flex-start;
                         gap: 2rem;
+                        flex-flow: wrap;
 
-                        .folder_item{
-                           
+                        .folder_item {
+                            padding: 0.5rem 16px;
+                            padding-right: 5px;
+                            min-width: 160px;
+                            height: 45px;
+                            border-radius: 5px;
+                            border: 2px solid var(--grey100);
+                            justify-content: space-between;
+                            transition: 0.3s;
+                            transform-origin: center;
+                            cursor: pointer;
+                            &:hover {
+                                background-color: var(--white_color);
+                                border-color: transparent;
+                                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06),
+                                    0px 0px 1px rgba(0, 0, 0, 0.04);
+                            }
+                            .foder_icon {
+                                width: 32px;
+                                height: 32px;
+                            }
+                            .folder_name {
+                                width: 90px;
+                                margin-top: auto;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                @include caption_text;
+                                font-weight: 500;
+                                color: var(--secondary_text2);
+                            }
+                        }
+                    }
+                }
+                .recent_section {
+                    width: 100%;
+                    header {
+                        width: 100%;
+                    }
+                    .recent_item {
+                        --icon_width: 30px;
+                        width: 100%;
+                        margin: 1rem 0;
+                        display: grid;
+                        grid-template-columns: 3fr .8fr .8fr;
+                        grid-gap: 20px;
+                        .recent_item_name_wrap {
+                            .recent_item_file_icon {
+                                width: var(--icon_width);
+                                height: var(--icon_width);
+                                margin-right: 15px;
+                            }
+                        }
+                        .text_field {
+                            color: var(--blue_color300);
+                        }
+                    }
+                    .recent_item.head {
+                        height: 30px;
+                        @include caption_text;
+                        font-weight: 600;
+                        margin-top: 10px;
+                        width: 100%;
+                        border-bottom: 2px solid var(--outline);
+                        .text_field {
+                            color: var(--secondary_text2);
                         }
                     }
                 }

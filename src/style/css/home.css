@@ -250,8 +250,8 @@ $white_color:#fff; */
 
 /* line 11, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_inputElements.scss */
 .input_section_head {
-  font-size: 0.8rem;
-  line-height: 1.12rem;
+  font-size: 0.85rem;
+  line-height: 1.19rem;
   font-weight: 600;
   color: var(--primary_text);
 }
@@ -316,8 +316,8 @@ $white_color:#fff; */
 
 /* line 67, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_inputElements.scss */
 .error_message_text {
-  font-size: 0.8rem;
-  line-height: 1.12rem;
+  font-size: 0.85rem;
+  line-height: 1.19rem;
   margin-left: 1rem;
   color: var(--warning);
   font-weight: 500;
