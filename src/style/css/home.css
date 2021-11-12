@@ -411,7 +411,7 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
-  background-image: url(.././images/hero_section_bg_image.svg);
+  background-image: url(../../images/hero_section_bg_image.svg);
 }
 
 /* line 66, ../../../../../xampp/htdocs/prolic/src/style/sass/home.scss */

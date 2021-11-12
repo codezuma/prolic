@@ -11,6 +11,10 @@
 </head>
 
 <body>
+    <?php 
+    session_start();
+    $email = $_SESSION["email"];    
+    ?>
     <div id="app_wrap">
         <aside id="nav_bar" class="" data-state="maximized">
             <button class="size_toggle_btn flex"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -79,10 +83,11 @@
                 </nav>
             </div>
             <div>
-                <div class="file_upload_con flex">
+                <div class="file_upload_con flex" id="upload_file_button">
                     <div class="add_icon flex">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"class="feather feather-plus">
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-plus">
                             <line x1="12" y1="5" x2="12" y2="19"></line>
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                         </svg>

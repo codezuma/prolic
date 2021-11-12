@@ -2,3 +2,4 @@ export { inputBox, passwordInputBox, emailInputBox, FormBox,OtpFormBox } from '.
 export {DialogBox} from './Dialog_box.js';
 export {Backend} from '../modules/Fetch.js'
 export{navbar} from "../modules/navbar.js";
+export{UserFiles} from "../modules/Files.js";
