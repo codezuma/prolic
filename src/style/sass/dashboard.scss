@@ -3,6 +3,8 @@
 @import "./particals/framework";
 @import "./particals/loader";
 @import "./particals/inputElements";
+@import "./particals/contextMenu";
+
 
 #app_wrap {
     --aside_width: 320px;
@@ -298,7 +300,7 @@
                                 box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06),
                                     0px 0px 1px rgba(0, 0, 0, 0.04);
                             }
-                            .foder_icon {
+                            .folder_icon {
                                 width: 32px;
                                 height: 32px;
                             }

@@ -214,8 +214,10 @@ document.getElementById('signin_button').addEventListener('click', () => {
                 body: signinFormData
             }).then((response) => {
                 response.text().then((text) => {
-                    console.log(text);
-                    switch (text) {
+                   const response =  JSON.parse(text);
+                   sessionStorage.setItem("userObject",response.userObject);
+                   sessionStorage.setItem("recentItems",response.recentItems);
+                    switch (response.loginResult) {
                         case 'email_not_available':
                             signinEmailInput.showError('email is not available Please try signing up');
                             signinForm.SubmittedForm();

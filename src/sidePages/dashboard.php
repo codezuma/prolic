@@ -13,7 +13,7 @@
 <body>
     <?php 
     session_start();
-    $email = $_SESSION["email"];    
+    $email = $_SESSION["email"];
     ?>
     <div id="app_wrap">
         <aside id="nav_bar" class="" data-state="maximized">
@@ -123,33 +123,33 @@
                 <div class="quick_access_section">
                     <h3 class="sub_item_head">Quick Access</h3>
                     <div class="quick_items_con flex">
-                        <div class="quick_item">
+                       <!--  <div class="quick_item contextMenuParent" data-contextMenuType="folder">
                             <div class="quick_item_icon file_icon" data-file_type="folder"></div>
                             <div class="quick_item_file_name">Human Cetered design </div>
                         </div>
-                        <div class="quick_item">
+                        <div class="quick_item contextMenuParent">
                             <div class="quick_item_icon file_icon" data-file_type="pdf"></div>
                             <div class="quick_item_file_name">Human Cetered design </div>
                         </div>
-                        <div class="quick_item">
+                        <div class="quick_item contextMenuParent">
                             <div class="quick_item_icon file_icon" data-file_type="pdf"></div>
                             <div class="quick_item_file_name">Human Cetered design </div>
                         </div>
-                        <div class="quick_item">
+                        <div class="quick_item contextMenuParent">
                             <div class="quick_item_icon file_icon" data-file_type="pdf"></div>
                             <div class="quick_item_file_name">Human Cetered design </div>
-                        </div>
-
+                        </div> -->
                     </div>
 
                 </div>
                 <div class="folder_section">
                     <h3 class="sub_item_head">Folders</h3>
-                    <div class="folders_con flex">
+                    <div class="folders_con flex" id="folders_container">
                         <div class="folder_item flex">
-                            <div class="foder_icon file_icon" data-file_type="folder"></div>
+                            <div class="folder_icon file_icon" data-file_type="folder"></div>
                             <div class="folder_name">Documents</div>
                         </div>
+                        <!--    
                         <div class="folder_item flex">
                             <div class="foder_icon file_icon" data-file_type="folder"></div>
                             <div class="folder_name">Notes </div>
@@ -165,8 +165,7 @@
                         <div class="folder_item flex">
                             <div class="foder_icon file_icon" data-file_type="folder"></div>
                             <div class="folder_name">Wallpapers </div>
-                        </div>
-
+                        </div> -->
                     </div>
 
                 </div>
@@ -253,5 +252,6 @@
 
         </aside>
     </div>
+    <script src="../js/modules/gsap.min.js"></script>
     <script type="module" src="../js/dashboard.js"></script>
 </body>
