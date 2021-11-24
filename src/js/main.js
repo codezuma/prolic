@@ -227,7 +227,7 @@ document.getElementById('signin_button').addEventListener('click', () => {
                               signinForm.SubmittedForm();
                             break;
                         case 'loging_in':
-                               location.assign("./src/sidePages/dashboard.php")
+                               location.assign("./src/sidePages/dashboard.php");
                                 break;
                         default:
                             break;

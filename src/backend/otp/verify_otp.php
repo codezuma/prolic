@@ -45,6 +45,7 @@ function makeTableForUser($id)
       path varchar(255),
       size int,
       upload_date date DEFAULT current_date,
+      opened_times int,
       PRIMARY KEY (id)
        );";
   return  $db->query($CREATE_TABLE_FOR_USER_SQL_QUERY);

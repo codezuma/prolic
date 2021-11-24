@@ -29,7 +29,9 @@ class userData{
        
         recentItems.forEach((ele)=>{
             const recentItem = document.createElement('div');
-            recentItem.classList.add('recent_item');
+            recentItem.classList.add('recent_item','contextMenuParent');
+            recentItem.setAttribute("data-contextMenuType","file");
+            recentItem.setAttribute("data-filePath",ele.path);
             recentItem.innerHTML = ` <div class="flex recent_item_name_wrap">
                                           <div class="recent_item_file_icon file_icon" data-file_type="${ele.type}"></div>
                                           <div class="recent_item_file_name text_field"> ${ele.name}</div>

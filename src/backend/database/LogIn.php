@@ -51,7 +51,7 @@ session_start();
     $data = $db->query($GET_RECENTITEMS_SQL_QUERY);
     $recentItems = [];
     while($row = $data->fetch_assoc()) {
-      $recentItems[] = new recentItem($row['file_name'],$row['upload_date'],$row['size'],$row['type']);  
+      $recentItems[] = new recentItem($row['file_name'],$row['upload_date'],$row['path'],$row['size'],$row['type']);  
     }
   
     return $recentItems;
@@ -107,12 +107,14 @@ session_start();
     public $modifiedDate;
     public $size;
     public $type;
-    function __construct($name,$modifiedDate,$size,$fileType)
+    public $path;
+    function __construct($name,$modifiedDate,$path,$size,$fileType)
     {
       $this->name = $name;
       $this->modifiedDate = $modifiedDate;
       $this->size = $size;
       $this->type = $fileType;
+      $this->path = $path;
     }
   }
   echo json_encode($output);

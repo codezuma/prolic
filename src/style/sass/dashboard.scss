@@ -323,9 +323,10 @@
                         width: 100%;
                     }
                     .recent_item {
+
                         --icon_width: 30px;
                         width: 100%;
-                        margin: 1rem 0;
+                        padding: 1rem 0;
                         display: grid;
                         grid-template-columns: 3fr .8fr .8fr;
                         grid-gap: 20px;
