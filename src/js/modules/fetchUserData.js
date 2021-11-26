@@ -1,3 +1,4 @@
+import {UserFiles} from './module.js'
 class userData{
     static userObject = JSON.parse(sessionStorage.getItem("userObject"));
     
@@ -31,9 +32,11 @@ class userData{
             const recentItem = document.createElement('div');
             recentItem.classList.add('recent_item','contextMenuParent');
             recentItem.setAttribute("data-contextMenuType","file");
+            recentItem.setAttribute("data-fileType",ele.type);
+            console.log(ele.type);
             recentItem.setAttribute("data-filePath",ele.path);
             recentItem.innerHTML = ` <div class="flex recent_item_name_wrap">
-                                          <div class="recent_item_file_icon file_icon" data-file_type="${ele.type}"></div>
+                                          <div class="recent_item_file_icon file_icon" data-file_type="${UserFiles.getFileType(ele.type)}"></div>
                                           <div class="recent_item_file_name text_field"> ${ele.name}</div>
                                      </div>
                                      <div class="recent_item_Modified_date text_field">${ele.modifiedDate}</div>

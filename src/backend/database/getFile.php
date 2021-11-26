@@ -9,7 +9,7 @@ if(file_exists($filepath)){
     header("Content-Desposition: attachment; filename = $filename");
     header("Content-Type:application/");
     header("Content-Tranfer-Encoding:binary");
-    readfile($filepath);
+    echo file_get_contents($filepath);
     exit;
 }
 else{

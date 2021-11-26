@@ -15,6 +15,21 @@
     session_start();
     $email = $_SESSION["email"];
     ?>
+    <div class="dialog_box_wrap flex" data-close>
+        <div class="flex" id="dialog_box">
+            <div class="flex close_dialog_button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-x">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </div>
+            <section class="flex">
+              
+            </section>
+        </div>
+    </div>
     <div id="app_wrap">
         <aside id="nav_bar" class="" data-state="maximized">
             <button class="size_toggle_btn flex"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -149,23 +164,7 @@
                             <div class="folder_icon file_icon" data-file_type="folder"></div>
                             <div class="folder_name">Documents</div>
                         </div>
-                        <!--    
-                        <div class="folder_item flex">
-                            <div class="foder_icon file_icon" data-file_type="folder"></div>
-                            <div class="folder_name">Notes </div>
-                        </div>
-                        <div class="folder_item flex">
-                            <div class="foder_icon file_icon" data-file_type="folder"></div>
-                            <div class="folder_name">Tickets</div>
-                        </div>
-                        <div class="folder_item flex">
-                            <div class="foder_icon file_icon" data-file_type="folder"></div>
-                            <div class="folder_name">Invoice </div>
-                        </div>
-                        <div class="folder_item flex">
-                            <div class="foder_icon file_icon" data-file_type="folder"></div>
-                            <div class="folder_name">Wallpapers </div>
-                        </div> -->
+                      
                     </div>
 
                 </div>

@@ -5,7 +5,66 @@
 @import "./particals/inputElements";
 @import "./particals/contextMenu";
 
+body {
+    display: flex;
+    align-items: center;
+    overflow-x:hidden;
+    position: relative;
+    justify-content: center;
+}
+.dialog_box_wrap {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    justify-content: center;
+    z-index: 10;
+    top: 0;
+    display: flex;
+    &[data-close] {
+        display: none;
+    }
+    #dialog_box {
+        padding: 2rem 10px;
+        padding-top:40px;
+        width: auto;
+        overflow: hidden;
+        max-width: 800px;
+        min-width: 280px;
+        height: auto;
+        border-radius: 20px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        background-color: var(--pure_white);
 
+        section{
+            height: 100%;
+            padding: 10px;
+            width: 100%;
+            flex-direction: column;
+            justify-content: space-between;
+            .head{
+                font-weight: 700;
+                text-align: center;
+            }
+        }
+       
+        .close_dialog_button {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            stroke: var(--primary_text);
+            position: absolute;
+            top: .6rem;
+            right: .6rem;
+            cursor: pointer;
+            justify-content: center;
+            transition: 0.3s ease-in-out;
+            &:hover {
+                background-color: rgba(73, 73, 73, 0.13);
+            }
+        }}}
 #app_wrap {
     --aside_width: 320px;
     width: 100vw;
@@ -201,6 +260,8 @@
         grid-area: 2/2/3/3;
         width: 100%;
         height: 100%;
+        overflow-x:hidden;
+        overflow-y: scroll;
         background-color: var(--grey);
         padding: 20px 32px;
         .dashboard_item {
@@ -322,14 +383,24 @@
                     header {
                         width: 100%;
                     }
+                    .recent_item_con{
+                        overflow-x: auto;
+                    }
+                    .recent_item:first-child{
+                        margin-top: 10px;
+                    }
                     .recent_item {
-
                         --icon_width: 30px;
                         width: 100%;
                         padding: 1rem 0;
+                        padding-left: 10px;
+                        border-radius: 5px;
+                        border:2px solid transparent;
                         display: grid;
                         grid-template-columns: 3fr .8fr .8fr;
                         grid-gap: 20px;
+                        align-items: center;
+                        transition: 0.2s ease-in-out;
                         .recent_item_name_wrap {
                             .recent_item_file_icon {
                                 width: var(--icon_width);
@@ -339,6 +410,14 @@
                         }
                         .text_field {
                             color: var(--blue_color300);
+
+                        }
+                        &:hover{
+                            border:2px solid var(--grey100);
+                            background-color: var(--blue_color100Light);
+                            .text_field {
+                                color: var(--blue_color600);
+                            }
                         }
                     }
                     .recent_item.head {
@@ -352,6 +431,12 @@
                             color: var(--secondary_text2);
                         }
                     }
+                }
+                &::-webkit-scrollbar-button{
+                    appearance: none;
+                }
+                &::-webkit-scrollbar-thumb{
+                    appearance: none;
                 }
             }
         }

@@ -14,6 +14,7 @@ $white_color:#fff; */
   --blue_color400:#7883FF;
   --blue_color200:#2B85FF;
   --blue_color100:#DBD9E6;
+  --blue_color100Light:#e8f0fe;
   --secondary_color:#7883FF;
   --primary_text:#212327;
   --secondary_text2:#424a57;
@@ -32,17 +33,17 @@ $white_color:#fff; */
   --success:rgb(0, 105, 49);
 }
 
-/* line 33, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
+/* line 34, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
 .primary_text {
   color: var(--primary_text);
 }
 
-/* line 36, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
+/* line 37, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
 .secondary_text {
   color: var(--secondary_text);
 }
 
-/* line 39, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
+/* line 40, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
 .primary_text {
   color: var(--primary_text);
 }
@@ -339,8 +340,9 @@ button[type='submit']:active {
 
 /* line 1, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_contextMenu.scss */
 .contextMenuCon {
-  width: 200px;
-  height: 300px;
+  padding: 15px 0;
+  width: 300px;
+  height: auto;
   background-color: var(--white_color);
   position: absolute;
   border-radius: 10px;
@@ -348,7 +350,114 @@ button[type='submit']:active {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
 }
 
-/* line 9, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 12, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_contextMenu.scss */
+.contextMenuItem {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+/* line 19, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_contextMenu.scss */
+.contextMenuItem svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--secondary_text2);
+}
+
+/* line 24, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_contextMenu.scss */
+.contextMenuItem .contextMenuName {
+  margin-left: 16px;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  font-weight: 600;
+  color: var(--secondary_text2);
+}
+
+/* line 30, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_contextMenu.scss */
+.contextMenuItem:hover {
+  background-color: var(--grey200);
+}
+
+/* line 8, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+body {
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+  justify-content: center;
+}
+
+/* line 15, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+.dialog_box_wrap {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  justify-content: center;
+  z-index: 10;
+  top: 0;
+  display: flex;
+}
+
+/* line 23, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+.dialog_box_wrap[data-close] {
+  display: none;
+}
+
+/* line 26, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+.dialog_box_wrap #dialog_box {
+  padding: 2rem 10px;
+  padding-top: 40px;
+  width: auto;
+  overflow: hidden;
+  max-width: 800px;
+  min-width: 280px;
+  height: auto;
+  border-radius: 20px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  background-color: var(--pure_white);
+}
+
+/* line 41, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+.dialog_box_wrap #dialog_box section {
+  height: 100%;
+  padding: 10px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* line 47, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+.dialog_box_wrap #dialog_box section .head {
+  font-weight: 700;
+  text-align: center;
+}
+
+/* line 53, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+.dialog_box_wrap #dialog_box .close_dialog_button {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  stroke: var(--primary_text);
+  position: absolute;
+  top: .6rem;
+  right: .6rem;
+  cursor: pointer;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+
+/* line 64, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+.dialog_box_wrap #dialog_box .close_dialog_button:hover {
+  background-color: rgba(73, 73, 73, 0.13);
+}
+
+/* line 68, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap {
   --aside_width: 320px;
   width: 100vw;
@@ -358,37 +467,37 @@ button[type='submit']:active {
   grid-template-rows: 80px 1fr;
 }
 
-/* line 16, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 75, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap .file_icon {
   background-size: cover;
 }
 
-/* line 18, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 77, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap .file_icon[data-file_type="pdf"] {
   background-image: url(../../images/pdf_file_icon.svg);
 }
 
-/* line 21, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 80, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap .file_icon[data-file_type="image"] {
   background-image: url(../../images/image_icon.svg);
 }
 
-/* line 24, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 83, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap .file_icon[data-file_type="video"] {
   background-image: url(../../images/video_icon.svg);
 }
 
-/* line 27, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 86, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap .file_icon[data-file_type="other"] {
   background-image: url(../../images/text_file.svg);
 }
 
-/* line 30, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 89, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap .file_icon[data-file_type="folder"] {
   background-image: url(../../images/folder_icon.svg);
 }
 
-/* line 34, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 93, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap header {
   grid-area: 1/2/2/4;
   display: flex;
@@ -399,19 +508,19 @@ button[type='submit']:active {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
 }
 
-/* line 42, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 101, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap header form {
   width: 40%;
   min-width: 400px;
 }
 
-/* line 46, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 105, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap header form .input_section[data-inputElement="search_bar"] #search_bar {
   height: 45px;
   border-radius: 10px;
 }
 
-/* line 53, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 112, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap header .profile_header_section .profile_icon {
   width: 50px;
   height: 50px;
@@ -420,7 +529,7 @@ button[type='submit']:active {
   background-size: cover;
 }
 
-/* line 62, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 121, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar {
   position: relative;
   grid-area: 1/1/3/2;
@@ -434,7 +543,7 @@ button[type='submit']:active {
   margin-bottom: 2rem;
 }
 
-/* line 74, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 133, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar .size_toggle_btn {
   cursor: pointer;
   position: absolute;
@@ -447,22 +556,22 @@ button[type='submit']:active {
   box-shadow: 0px 15px 32px rgba(0, 0, 0, 0.08), 0px 12px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.02), 0px 0px 0.5px rgba(0, 0, 0, 0.04);
 }
 
-/* line 86, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 145, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar .app_icon_con img {
   width: 45px;
 }
 
-/* line 89, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 148, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar .app_icon_con {
   margin-bottom: 2rem;
 }
 
-/* line 92, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 151, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar nav {
   flex-direction: column;
 }
 
-/* line 94, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 153, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar nav .nav_item {
   cursor: pointer;
   padding: 10px;
@@ -472,51 +581,51 @@ button[type='submit']:active {
   transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-/* line 102, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 161, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar nav .nav_item .nav_icon svg {
   width: 22px;
   height: 22px;
   stroke: var(--secondary_text);
 }
 
-/* line 107, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 166, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar nav .nav_item .nav_text {
   margin-left: 16px;
   font-weight: 700;
   color: var(--secondary_text);
 }
 
-/* line 113, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 172, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar nav .nav_item[data-state="active"] {
   background-color: var(--grey200);
 }
 
-/* line 115, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 174, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar nav .nav_item[data-state="active"] .nav_icon svg {
   stroke: var(--primary_text);
 }
 
-/* line 118, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 177, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar nav .nav_item[data-state="active"] .nav_text {
   color: var(--primary_text);
 }
 
-/* line 122, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 181, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar nav .nav_item:hover {
   background-color: var(--grey200);
 }
 
-/* line 124, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 183, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar nav .nav_item:hover .nav_icon svg {
   stroke: var(--primary_text);
 }
 
-/* line 127, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 186, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar nav .nav_item:hover .nav_text {
   color: var(--primary_text);
 }
 
-/* line 133, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 192, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar .file_upload_con {
   width: 95%;
   height: 170px;
@@ -527,7 +636,7 @@ button[type='submit']:active {
   cursor: pointer;
 }
 
-/* line 141, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 200, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar .file_upload_con .add_icon {
   width: 50px;
   height: 50px;
@@ -538,12 +647,12 @@ button[type='submit']:active {
   margin-bottom: 20px;
 }
 
-/* line 150, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 209, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar .file_upload_con .add_icon svg {
   stroke: var(--white_color);
 }
 
-/* line 154, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 213, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar .file_upload_con h2 {
   font-size: 1rem;
   line-height: 1.4rem;
@@ -551,7 +660,7 @@ button[type='submit']:active {
   line-height: 20px;
 }
 
-/* line 159, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 218, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar .file_upload_con p {
   font-size: 0.85rem;
   line-height: 1.19rem;
@@ -559,72 +668,74 @@ button[type='submit']:active {
   color: var(--secondary_text);
 }
 
-/* line 165, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 224, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar[data-state="minimized"] {
   padding: none;
 }
 
-/* line 167, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 226, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar[data-state="minimized"] .size_toggle_btn {
   right: -50px;
   transform: rotate(180deg);
 }
 
-/* line 172, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 231, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar[data-state="minimized"] nav .nav_item {
   width: auto;
   height: auto;
 }
 
-/* line 176, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 235, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar[data-state="minimized"] nav .nav_icon {
   width: 22px;
   height: 22px;
 }
 
-/* line 180, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 239, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar[data-state="minimized"] nav .nav_text {
   display: none;
 }
 
-/* line 184, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 243, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar[data-state="minimized"] .file_upload_con {
   width: 100%;
   border: none;
 }
 
-/* line 187, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 246, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar[data-state="minimized"] .file_upload_con .add_icon {
   width: 40px;
   height: 40px;
 }
 
-/* line 191, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 250, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar[data-state="minimized"] .file_upload_con h2 {
   display: none;
 }
 
-/* line 194, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 253, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #nav_bar[data-state="minimized"] .file_upload_con p {
   display: none;
 }
 
-/* line 200, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 259, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section {
   grid-area: 2/2/3/3;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
   background-color: var(--grey);
   padding: 20px 32px;
 }
 
-/* line 206, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 267, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item {
   width: 100%;
   height: 100%;
 }
 
-/* line 209, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 270, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item .sub_item_head {
   font-size: 1.5rem;
   line-height: 2.1rem;
@@ -632,23 +743,23 @@ button[type='submit']:active {
   font-weight: 700;
 }
 
-/* line 215, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 276, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-state="active"] {
   display: block;
 }
 
-/* line 218, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 279, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-state="non_active"] {
   display: none;
 }
 
-/* line 222, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 283, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .quick_access_section {
   width: 100%;
   margin-bottom: 2rem;
 }
 
-/* line 225, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 286, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .quick_access_section .quick_items_con {
   flex-flow: wrap;
   min-width: 100%;
@@ -656,7 +767,7 @@ button[type='submit']:active {
   gap: 2rem;
 }
 
-/* line 232, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 293, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .quick_access_section .quick_item {
   width: 160px;
   height: 150px;
@@ -672,14 +783,14 @@ button[type='submit']:active {
   cursor: pointer;
 }
 
-/* line 245, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 306, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .quick_access_section .quick_item:hover {
   background-color: var(--white_color);
   border-color: transparent;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
 }
 
-/* line 251, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 312, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .quick_access_section .quick_item .quick_item_icon {
   width: 60px;
   height: 60px;
@@ -687,7 +798,7 @@ button[type='submit']:active {
   margin-bottom: 1rem;
 }
 
-/* line 258, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 319, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .quick_access_section .quick_item .quick_item_file_name {
   text-align: center;
   font-size: 0.85rem;
@@ -701,7 +812,7 @@ button[type='submit']:active {
 }
 
 @supports (-webkit-line-clamp: 2) {
-  /* line 258, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+  /* line 319, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
   #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .quick_access_section .quick_item .quick_item_file_name {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -711,13 +822,13 @@ button[type='submit']:active {
   }
 }
 
-/* line 277, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 338, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .folder_section {
   max-width: 100%;
   margin-bottom: 2rem;
 }
 
-/* line 280, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 341, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .folder_section .folders_con {
   min-width: 100%;
   justify-content: flex-start;
@@ -725,7 +836,7 @@ button[type='submit']:active {
   flex-flow: wrap;
 }
 
-/* line 286, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 347, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .folder_section .folders_con .folder_item {
   padding: 0.5rem 16px;
   padding-right: 5px;
@@ -739,20 +850,20 @@ button[type='submit']:active {
   cursor: pointer;
 }
 
-/* line 297, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 358, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .folder_section .folders_con .folder_item:hover {
   background-color: var(--white_color);
   border-color: transparent;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
 }
 
-/* line 303, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 364, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .folder_section .folders_con .folder_item .folder_icon {
   width: 32px;
   height: 32px;
 }
 
-/* line 307, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 368, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .folder_section .folders_con .folder_item .folder_name {
   width: 90px;
   margin-top: auto;
@@ -765,39 +876,65 @@ button[type='submit']:active {
   color: var(--secondary_text2);
 }
 
-/* line 320, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 381, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .recent_section {
   width: 100%;
 }
 
-/* line 322, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 383, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .recent_section header {
   width: 100%;
 }
 
-/* line 325, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 386, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+#app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .recent_section .recent_item_con {
+  overflow-x: auto;
+}
+
+/* line 389, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+#app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .recent_section .recent_item:first-child {
+  margin-top: 10px;
+}
+
+/* line 392, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .recent_section .recent_item {
   --icon_width: 30px;
   width: 100%;
   padding: 1rem 0;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 2px solid transparent;
   display: grid;
   grid-template-columns: 3fr .8fr .8fr;
   grid-gap: 20px;
+  align-items: center;
+  transition: 0.2s ease-in-out;
 }
 
-/* line 334, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 405, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .recent_section .recent_item .recent_item_name_wrap .recent_item_file_icon {
   width: var(--icon_width);
   height: var(--icon_width);
   margin-right: 15px;
 }
 
-/* line 340, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 411, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .recent_section .recent_item .text_field {
   color: var(--blue_color300);
 }
 
-/* line 344, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 415, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+#app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .recent_section .recent_item:hover {
+  border: 2px solid var(--grey100);
+  background-color: var(--blue_color100Light);
+}
+
+/* line 418, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+#app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .recent_section .recent_item:hover .text_field {
+  color: var(--blue_color600);
+}
+
+/* line 423, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .recent_section .recent_item.head {
   height: 30px;
   font-size: 0.85rem;
@@ -808,12 +945,22 @@ button[type='submit']:active {
   border-bottom: 2px solid var(--outline);
 }
 
-/* line 351, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 430, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"] .recent_section .recent_item.head .text_field {
   color: var(--secondary_text2);
 }
 
-/* line 359, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 435, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+#app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"]::-webkit-scrollbar-button {
+  appearance: none;
+}
+
+/* line 438, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+#app_wrap #dashboard_section .dashboard_item[data-item_name="dashboard"]::-webkit-scrollbar-thumb {
+  appearance: none;
+}
+
+/* line 444, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #user_section {
   grid-area: 2/3/3/4;
   min-width: var(--aside_width);
@@ -822,7 +969,7 @@ button[type='submit']:active {
   background-color: var(--grey);
 }
 
-/* line 366, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 451, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #user_section .user_section_wrap {
   padding: 1rem;
   border-radius: 10px;
@@ -831,13 +978,13 @@ button[type='submit']:active {
   background-color: var(--white_color);
 }
 
-/* line 373, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 458, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #user_section .user_section_wrap .data_section {
   width: 100%;
   margin-bottom: 45px;
 }
 
-/* line 376, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 461, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #user_section .user_section_wrap .data_section h2 {
   font-size: 1rem;
   line-height: 1.4rem;
@@ -845,7 +992,7 @@ button[type='submit']:active {
   margin-bottom: 1rem;
 }
 
-/* line 380, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 465, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #user_section .user_section_wrap .data_section h2 .data_used,
 #app_wrap #user_section .user_section_wrap .data_section h2 .total_data {
   font-size: 1.5rem;
@@ -853,7 +1000,7 @@ button[type='submit']:active {
   color: var(--blue_color300);
 }
 
-/* line 386, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 471, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #user_section .user_section_wrap .data_section .data_bar_con {
   width: 100%;
   height: 13px;
@@ -861,47 +1008,47 @@ button[type='submit']:active {
   background-color: var(--blue_color100);
 }
 
-/* line 391, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 476, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #user_section .user_section_wrap .data_section .data_bar_con .data_bar_item {
   height: 100%;
   border-radius: 2px;
 }
 
-/* line 395, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 480, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #user_section .user_section_wrap .data_section .data_bar_con .data_bar_item:not(:first-child) {
   margin-left: -2px;
 }
 
-/* line 398, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 483, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #user_section .user_section_wrap .data_section .data_bar_con .data_bar_item:nth-child(1) {
   width: 20%;
   background-color: var(--yellow_color);
 }
 
-/* line 403, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 488, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #user_section .user_section_wrap .data_section .data_bar_con .data_bar_item:nth-child(2) {
   width: 15%;
   background-color: var(--red_color);
 }
 
-/* line 407, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 492, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #user_section .user_section_wrap .data_section .data_bar_con .data_bar_item:nth-child(3) {
   width: 10%;
   background-color: var(--purple_color);
 }
 
-/* line 413, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 498, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #user_section .user_section_wrap .files_section {
   width: 100%;
 }
 
-/* line 415, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 500, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #user_section .user_section_wrap .files_section .file_item {
   width: 100%;
   margin-bottom: 1.5rem;
 }
 
-/* line 418, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 503, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #user_section .user_section_wrap .files_section .file_item .file_icon {
   width: 35px;
   height: 35px;
@@ -909,7 +1056,7 @@ button[type='submit']:active {
   margin-right: 1rem;
 }
 
-/* line 424, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 509, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #user_section .user_section_wrap .files_section .file_item .file_name {
   font-size: 0.85rem;
   line-height: 1.19rem;
@@ -917,7 +1064,7 @@ button[type='submit']:active {
   color: var(--blue_color300);
 }
 
-/* line 429, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 514, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #user_section .user_section_wrap .files_section .file_item .num_of_files {
   font-size: 0.75rem;
   line-height: 1.05rem;
@@ -925,7 +1072,7 @@ button[type='submit']:active {
   color: var(--secondary_text);
 }
 
-/* line 434, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 519, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap #user_section .user_section_wrap .files_section .file_item .file_size {
   font-size: 1.2rem;
   line-height: 1.68rem;
