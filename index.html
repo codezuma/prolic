@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="src/images/app_icon.svg" type="image/svg" sizes="32x32">
+    <meta name="theme-color" content="#0A1966">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="src/style/css/home.css">
+    <title>Prolic</title>
+</head>
+
+<body class="flex">
+    <div class="dialog_box_wrap flex" data-close>
+        <div class="flex" id="dialog_box">
+            <div class="flex close_dialog_button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </div>
+            <section class="flex">
+               
+            </section>
+        </div>
+    </div>
+    <aside>
+
+    </aside>
+    <div class="container nav_bar flex">
+        <span class="logo flex  ">
+            <img class="logo_img" src="src/images/app_icon.svg" alt="">
+            <div class="logo_text heading4"><span>pro</span><span>lic</span></div>
+    </span>
+    <nav class="flex">
+        <li class="nav_items body_text">About</li>
+        <li class="nav_items body_text">Features</li>
+        <li class="nav_items body_text">Pricing</li>
+        <li class="nav_items body_text flex" id='signup_button'>Get Started</li>
+    </nav>
+    </div>
+    <div class="container hero_section ">
+        <div class="floating_items video_icon flex"><img src="src/images/video.svg" alt=""></div>
+        <div class="floating_items flex pdf_icon title_text">PDF</div>
+        <div class="floating_items flex heading3 zip_icon">ZIP</div>
+        <div class="floating_items flex text_icon"><img src="src/images/text_file_icon.svg" alt=""></div>
+        <div class="heading1 hero_section_head">
+            <span>Manage</span>
+            <span>all your files</span>
+            <br>
+            <span>in</span>
+            <span>one place</span>
+        </div>
+        <div class="title_text hero_section_subhead">
+            A comfortable way to have access to <br> all your files
+        </div>
+        <div class="cta_wrap flex">
+            <form class="flex" action="">
+                <input type="email" class="body_text" required placeholder="Enter your email">
+                <input type="submit" class="body_text" value="Get Started">
+            </form>
+        </div>
+    </div>
+
+    <script src="src/js/modules/gsap.min.js"></script>
+    <script type="module" src="src/js/main.js"></script>
+</body>
+
+</html>
