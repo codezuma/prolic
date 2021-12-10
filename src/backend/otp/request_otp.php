@@ -13,7 +13,7 @@ $otp_type = $_POST['type'];
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
     //Server settings
-                   //Enable verbose debug output
+  //Enable verbose debug output
     $mail->isSMTP();     
     $mail->Mailer = "smtp";                                       //Send using SMTP
 /*     $mail->SMTPDebug  = 1;   */
@@ -21,11 +21,11 @@ $mail = new PHPMailer(true);
     $mail->SMTPSecure = "tls";
     $mail->Port       =  587;
     $mail->Host       = "smtp.gmail.com";
-    $mail->Username   = "patidarchandresh2002@gmail.com";
-    $mail->Password   = "IamChanp";
-                                      //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->Username   = "prolicmail@gmail.com";
+    $mail->Password   = "prolic123";
+//TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-    //Recipients
+//Recipients
     $mail->IsHTML(true);
     $mail->AddAddress("$email", "Chandresh patidar");
     $mail->SetFrom("patidarchandresh2002@gmail.com", "Prolic");

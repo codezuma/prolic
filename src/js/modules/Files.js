@@ -6,7 +6,7 @@ class UserFiles {
         inputElement.addEventListener("change", () => {
             const file = inputElement.files[0];
             const fileFormData = new FormData();
-            fileFormData.append("file",file);
+            fileFormData.append("file", file);
             fileFormData.append("path", path);
             fileFormData.append("type", file.type);
             fetch("../../src/backend/database/saveFile.php", {
@@ -18,10 +18,12 @@ class UserFiles {
             });
         });
     }
-
+  static  getFileNameFromPath(path){
+        const pathSplitArray = path.split("/");
+        return  pathSplitArray.pop();
+    }
     static getFileType(file) {
-        let fileType = (typeof file == 'string')?file:file.type;
-        console.log(("image/png").match('image'));
+        let fileType = (typeof file == 'string') ? file : file.type;
         if (fileType.match('image'))
             return 'image';
 
@@ -30,13 +32,34 @@ class UserFiles {
 
         if (fileType.match('audio.*'))
             return 'audio';
-            
+
         if (fileType.match("pdf.*"))
             return 'pdf';
         // etc...
 
         return 'other'
     }
-    
+    static getFileTypeFromExtension(extension) {
+        const extensionObjects = [
+            {
+                fileType: 'image',
+                extensions: ['apng', 'avif', 'gif', 'jpg', 'jpeg', 'jfif', 'pjpeg', 'pjp', 'png', 'svg', 'webp']
+            },
+            {
+                fileType: 'pdf',
+                extensions:['pdf']
+          
+            },
+             {
+                fileType: 'video',
+                extensions:['webm', 'mkv', 'flv', 'vob', 'ogv', 'ogg', 'rrc', 'gifv', 'mng', 'mov', 'avi', 'qt', 'wmv', 'yuv', 'rm', 'asf', 'amv', 'mp4', 'm4p', 'm4v', 'mpg', 'mp2', 'mpeg', 'mpe', 'mpv', 'm4v', 'svi', '3gp', '3g2', 'mxf', 'roq', 'nsv', 'flv', 'f4v', 'f4p', 'f4a', 'f4b']
+             }
+
+            ];
+        
+       return extensionObjects.find((ele)=>!(ele.extensions.indexOf(extension) ===-1)) || 'other'
+
+    }
+
 }
 export { UserFiles };
