@@ -529,18 +529,19 @@ body {
   background-size: cover;
 }
 
-/* line 122, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 121, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap .quick_access_section, #app_wrap .file_section {
   width: 100%;
   margin-bottom: 2rem;
 }
 
-/* line 125, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
+/* line 124, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */
 #app_wrap .quick_access_section .quick_items_con, #app_wrap .quick_access_section .files_con, #app_wrap .file_section .quick_items_con, #app_wrap .file_section .files_con {
   flex-flow: wrap;
   min-width: 100%;
   justify-content: flex-start;
   gap: 2rem;
+  padding-bottom: 1rem;
 }
 
 /* line 132, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */

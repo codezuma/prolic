@@ -178,22 +178,10 @@
                     <h3 class="subtitle_text">Files</h3>
                     <br>
                     <div class="files_con flex" id="MyFiles_files_section">
-                        <div class="file contextMenuParent" data-contextMenuType="folder">
+                     <!--    <div class="file contextMenuParent" data-contextMenuType="folder">
                             <div class="file_item_icon file_icon" data-file_type="folder"></div>
                             <div class="file_item_name">Human Cetered design </div>
-                        </div>
-                        <div class="quick_item contextMenuParent">
-                            <div class="quick_item_icon file_icon" data-file_type="pdf"></div>
-                            <div class="quick_item_file_name">Human Cetered design </div>
-                        </div>
-                        <div class="quick_item contextMenuParent">
-                            <div class="quick_item_icon file_icon" data-file_type="pdf"></div>
-                            <div class="quick_item_file_name">Human Cetered design </div>
-                        </div>
-                        <div class="quick_item contextMenuParent">
-                            <div class="quick_item_icon file_icon" data-file_type="pdf"></div>
-                            <div class="quick_item_file_name">Human Cetered design </div>
-                        </div>
+                        </div> -->
                     </div>
 
                 </div>

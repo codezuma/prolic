@@ -2,6 +2,7 @@ import { fileComponent, userData, MyFiles,dialogbox, UserFiles, navbar, ContextM
 document.querySelector(".size_toggle_btn").addEventListener('click', () => { navbar.toggleSize(); });
 document.querySelector("#upload_file_button").addEventListener('click', () => { UserFiles.getFileFromUser() });
 userData.updateRecentItemsSection();
+userData.updateFolderSection();
 ContextMenu.start();
 (function () {
         const dashboardItems = document.getElementsByClassName('dashboard_item');
@@ -28,4 +29,3 @@ ContextMenu.start();
 
         })
     })();
-MyFiles.show();

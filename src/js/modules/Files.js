@@ -57,7 +57,7 @@ class UserFiles {
 
             ];
         
-       return extensionObjects.find((ele)=>!(ele.extensions.indexOf(extension) ===-1)) || 'other'
+       return (extensionObjects.find((ele)=>!(ele.extensions.indexOf(extension) ===-1))).fileType || 'other'
 
     }
 

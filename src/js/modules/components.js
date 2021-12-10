@@ -1,15 +1,15 @@
+import { ContextMenu, } from "./ContextMenu.js";
 import { userData } from "./fetchUserData.js";
-import {dialogbox,MyFiles,UserFiles} from "./module.js"
+import {ContextMenuParent, dialogbox,MyFiles,UserFiles} from "./module.js"
 
 class fileComponent{
-    constructor(fileElement){
-        this.path = fileElement.getAttribute('data-filepath');
-        this.name = UserFiles.getFileNameFromPath(this.path);
-        this.filetype = fileElement.getAttribute('data-fileType');
-        const fileObject = this;
+    constructor(fileElement,name,path,filetype){
+        this.path = path;
+        this.name = name;
+        this.filetype = filetype;
         fileElement.addEventListener('dblclick',()=>{fileObject.open()});
     }
-    componentType = 'folder';
+    componentType = 'file';
 
     async download(){
        this.fetchFile().then(response=>{response.blob().then(blob=>{
@@ -27,7 +27,7 @@ class fileComponent{
         fileObject.append("filepath",this.path); 
         return fetch("../backend/database/getFile.php",{
               method: 'POST', 
-              body: fileObject // body data type must match "Content-Type" header
+              body: fileObject
               })
       }
     async open(){
@@ -38,7 +38,6 @@ class fileComponent{
                 dialogbox.putDialogBox(`<image style="width:600px;height:auto"src="${fileReader.result}">`)
                 dialogbox.showDialogBox();     
             }
-             
         })
         });
     }
@@ -46,17 +45,19 @@ class fileComponent{
     
 }
 class folderComponent{
-    constructor(folderObject){
+    constructor(folderElement,folderObject){
        this.folderObject = folderObject;
+       let componentObject =this;
+       folderElement.addEventListener('dblclick',()=>{componentObject.open()})
     }
-    componentType = 'file';
+    componentType = 'folder';
     getFileName(){
         const pathSplitArray = this.path.split("/");
         return  pathSplitArray.pop();
     }
     
-    async open(){
-    
+    open(){
+     MyFiles.show(this.folderObject);
     }
 
     

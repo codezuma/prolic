@@ -1,35 +1,10 @@
-import { UserFiles,fileComponent,folderComponent, } from './module.js'
+import { UserFiles,fileComponent,folderComponent,MyFiles } from './module.js'
 class userData {
     static userObject = JSON.parse(sessionStorage.getItem("userObject"));
     
-  /*   static updateFolderSection() {
-        const userObject = this.userObject;
-        const dashboardFolderSection = document.getElementById('folders_container');
-
-        //puts folder Elements in container provided
-            function putFolderItems(container) {
-                userObject.folders.forEach((folderObject) => {
-                    const folderItem = document.createElement('div');
-                    folderItem.classList.add('folder_item', 'flex');
-                    folderItem.componentObject = folderObject;
-
-                    const folderIcon = document.createElement('div');
-                    folderIcon.classList.add('folder_icon', 'file_icon');
-                    folderIcon.setAttribute("data-file_type", "folder");
-
-                    const folderName = document.createElement('div');
-                    folderName.classList.add('folder_name');
-                    folderName.innerHTML = folderObject.name;
-
-                    folderItem.appendChild(folderIcon);
-                    folderItem.appendChild(folderName);
-
-                    container.appendChild(folderItem);
-                });
-            }
-        putFolderItems(dashboardFolderSection);
-        putFolderItems(myfilesFolderSection);
-    } */
+    static updateFolderSection(){
+        MyFiles.show(this.userObject);
+    }
     static updateRecentItemsSection() {
         let recentItems = sessionStorage.getItem("recentItems");
         recentItems = JSON.parse(recentItems);
