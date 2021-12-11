@@ -72,6 +72,39 @@ body {
     display: grid;
     grid-template-columns: var(--aside_width) 1fr var(--aside_width);
     grid-template-rows: 80px 1fr;
+    hr{
+        height: 1.5px;
+        width: 110%;
+        margin: 0 -5%;
+        border: none;
+        background-color:  var(--grey100);
+    }
+    .file_nav_item_con{
+        margin-top: -10px;
+        width: 100%;
+        padding-bottom: 0.5rem;
+        
+    }
+    .file_nav_item{
+        padding: 6px 8px;
+        border-radius: 5px;
+        width:fit-content;
+        margin:0 2px;
+        border: none;
+        background:none;
+        cursor: pointer;
+
+        color: var(--secondary_text2);
+         &:hover{
+             background-color: var(--grey100_50);
+         }
+         &[data-state="active"]{
+             color: var(--primary_text);
+         }
+    }
+    .file_nav_item_seperater{
+        stroke: var(--secondary_text2);
+    }
     .file_icon {
         background-size: cover;
         &[data-file_type="pdf"] {

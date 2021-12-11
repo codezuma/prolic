@@ -22,6 +22,7 @@ $white_color:#fff; */
   --disable_text:#8c8c8c;
   --outline:#d9d9d9;
   --grey:#F5F5F5;
+  --grey100_50:#e4e4e498;
   --grey100:#e4e4e4;
   --grey200:#efefef;
   --white_color:#fdfdfd;
@@ -33,17 +34,17 @@ $white_color:#fff; */
   --success:rgb(0, 105, 49);
 }
 
-/* line 34, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
+/* line 35, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
 .primary_text {
   color: var(--primary_text);
 }
 
-/* line 37, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
+/* line 38, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
 .secondary_text {
   color: var(--secondary_text);
 }
 
-/* line 40, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
+/* line 41, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
 .primary_text {
   color: var(--primary_text);
 }

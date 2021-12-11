@@ -13,7 +13,7 @@ class ContextMenu {
     }
     static getMenuItem() {
 
-    } 
+    }
 }
 
 class ContextMenuItem {
@@ -29,29 +29,34 @@ class ContextMenuParent {
         this.htmlElement = htmlElement;
         htmlElement.addEventListener("contextmenu", this.addContextMenu);
     }
-    addContetMenuItems(ContextItemCon){
+    addContetMenuItems(ContextItemCon) {
         let ContextMenuType = this.htmlElement.componentObject.componentType;
         let componentObject = this.htmlElement.componentObject;
         let fileContextMenu = [new ContextMenuItem('Open', '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>', () => {
-                               componentObject.open();
-                                }),
-                              new ContextMenuItem('Download', '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>', () => {
-                                componentObject.download();
-                                })
-                               ];
+            componentObject.open();
+        }),
+        new ContextMenuItem('Download', '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>', () => {
+            componentObject.download();
+        })
+        ];
+        let folderContextMenu = [new ContextMenuItem('Open', '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>', () => {
+            componentObject.open();
+        }),
+
+        ];
         let contextMenuItems;
-        if(ContextMenuType == 'file'){
-          contextMenuItems = fileContextMenu;
+        if (ContextMenuType == 'file') {
+            contextMenuItems = fileContextMenu;
         }
-        contextMenuItems.forEach(ele=>{
+        contextMenuItems.forEach(ele => {
             let contextMenuItem = document.createElement('div');
             contextMenuItem.classList.add('contextMenuItem');
-            contextMenuItem.addEventListener('click',ele.function);
+            contextMenuItem.addEventListener('click', ele.function);
             contextMenuItem.innerHTML = `${ele.icon} <span class="contextMenuName" >${ele.name}</span>`
-            ContextItemCon.appendChild(contextMenuItem); 
+            ContextItemCon.appendChild(contextMenuItem);
         })
-                                       
-        
+
+
     }
     addContextMenu = (e) => {
         e.preventDefault();
@@ -73,7 +78,7 @@ class ContextMenuParent {
     showContextMenu(xCordinate, yCordinate) {
         let menuCon = document.createElement('div');
         menuCon.classList.add("contextMenuCon");
-        this.addContetMenuItems(menuCon); 
+        this.addContetMenuItems(menuCon);
         menuCon.style.top = yCordinate + "px";
         menuCon.style.left = xCordinate + "px";
         this.htmlElement.appendChild(menuCon);
@@ -87,4 +92,4 @@ class ContextMenuParent {
     }
 }
 
-export { ContextMenu ,ContextMenuParent};
+export { ContextMenu, ContextMenuParent };

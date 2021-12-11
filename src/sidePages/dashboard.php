@@ -43,14 +43,14 @@
                     <img src="../images/app_logo.svg" alt="">
                 </div>
                 <nav class="flex">
-                    <div class="nav_item flex" data-item_name="dashboard" data-state="active">
+                    <div class="nav_item flex" data-item_name="dashboard" data-state="non_active">
                         <span class="nav_icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
                                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
                             </svg></span>
                         <span class="nav_text">Dashboard</span>
                     </div>
-                    <div class="nav_item flex" data-item_name="my_files" data-state="non_active">
+                    <div class="nav_item flex" data-item_name="my_files" data-state="active">
                         <span class="nav_icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder">
                                 <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
                                 </path>
@@ -118,7 +118,7 @@
             </div>
         </header>
         <main id="dashboard_section">
-            <div class="dashboard_item" data-item_name="dashboard" data-state="active">
+            <div class="dashboard_item" data-item_name="dashboard" data-state="non_active">
                 <div class="quick_access_section">
                     <h3 class="sub_item_head">Quick Access</h3>
                     <div class="quick_items_con flex">
@@ -162,11 +162,17 @@
                     </div>
                 </div>
             </div>
-            <div class="dashboard_item" data-item_name="my_files" data-state="non_active">
-                <div class="folder_section">
+            <div class="dashboard_item" data-item_name="my_files" data-state="active">
+               <div class="file_nav_item_con flex" id="file_nav_item_con" >
+                   <button class="file_nav_item subtitle_text" data-state="active">MyDrive</button>
+                   <svg class="file_nav_item_seperater" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                   <button class="file_nav_item subtitle_text" data-state="non_active">MyDrive</button>
+                </div>
+               <hr>
+               <br>
+             <div class="folder_section">
                     <h3 class="subtitle_text">Folders</h3>
                     <br>
-
                     <div class="folders_con flex" id="MyFiles_folder_section">
                         <!-- <div class="folder_item flex">
                             <div class="folder_icon file_icon" data-file_type="folder"></div>

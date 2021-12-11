@@ -18,7 +18,7 @@ class UserFiles {
             });
         });
     }
-  static  getFileNameFromPath(path){
+    static  getFileNameFromPath(path){
         const pathSplitArray = path.split("/");
         return  pathSplitArray.pop();
     }

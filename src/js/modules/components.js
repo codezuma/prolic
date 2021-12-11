@@ -7,7 +7,8 @@ class fileComponent{
         this.path = path;
         this.name = name;
         this.filetype = filetype;
-        fileElement.addEventListener('dblclick',()=>{fileObject.open()});
+        let componentObject = this;
+        fileElement.addEventListener('dblclick',()=>{componentObject.open()});
     }
     componentType = 'file';
 
@@ -58,6 +59,9 @@ class folderComponent{
     
     open(){
      MyFiles.show(this.folderObject);
+    }
+    createNewFolder(){
+     
     }
 
     

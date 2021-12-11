@@ -6,12 +6,15 @@ class MyFiles {
             parent.firstChild.remove()
         }
     }
+   
     static show(folderObject) {
         const folderSection = document.getElementById('MyFiles_folder_section');
         const fileSection = document.getElementById('MyFiles_files_section');
         
         this.removeChildren(folderSection);
         this.removeChildren(fileSection);
+        
+        this.addFolderNavItem(folderObject.name,folderObject);
 
         folderObject.folders.forEach(element => { this.putFolderItems(element, folderSection); });
         folderObject.files.forEach((element) => {
@@ -28,6 +31,16 @@ class MyFiles {
             fileElement.innerHTML = fileElementContent;
             fileSection.appendChild(fileElement); 
         })
+    }
+    static navItemContainer = document.getElementById('file_nav_item_con');
+
+    static addFolderNavItem(name,folderObject){
+        const navElement = document.createElement('button');
+        navElement.classList.add('file_nav_item','subtitle_text');
+        navElement.textContent = name;
+        
+        this.navItemContainer.appendChild(navElement);
+        navElement.componentObject = new folderComponent(navElement,folderObject)
     }
     static putFolderItems(folderObject, container) {
         const folderElement = document.createElement('div');
@@ -53,5 +66,13 @@ class MyFiles {
 
 
 }
+class FileNavItem{
+    static navItemContainer = document.getElementById('file_nav_item_con');
 
+    static add_file_nav_item(name){
+        const navElement = document.createElement('button');
+        navElement.classList.add('file_nav_item','subtitle_text');
+        this.navItemContainer.appendChild(navElement);
+    }
+}
 export { MyFiles };
