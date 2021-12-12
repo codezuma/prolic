@@ -163,11 +163,7 @@
                 </div>
             </div>
             <div class="dashboard_item" data-item_name="my_files" data-state="active">
-               <div class="file_nav_item_con flex" id="file_nav_item_con" >
-                   <button class="file_nav_item subtitle_text" data-state="active">MyDrive</button>
-                   <svg class="file_nav_item_seperater" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                   <button class="file_nav_item subtitle_text" data-state="non_active">MyDrive</button>
-                </div>
+               <div class="file_nav_item_con flex" id="file_nav_item_con" ></div>
                <hr>
                <br>
              <div class="folder_section">

@@ -1,3 +1,5 @@
+import { folderNavItemComponent } from "./components.js";
+import { Icons } from "./Icons.js";
 import { UserFiles,userData,fileComponent,ContextMenuParent,folderComponent} from "./module.js"
 
 class MyFiles {
@@ -6,16 +8,19 @@ class MyFiles {
             parent.firstChild.remove()
         }
     }
-   
-    static show(folderObject) {
+    static navItemContainer = document.getElementById('file_nav_item_con');
+
+    static show(folderObject,isFolderNavItem = false) {
         const folderSection = document.getElementById('MyFiles_folder_section');
         const fileSection = document.getElementById('MyFiles_files_section');
         
         this.removeChildren(folderSection);
         this.removeChildren(fileSection);
         
-        this.addFolderNavItem(folderObject.name,folderObject);
-
+        //if folderElement is nav Item there is no need to add folder nav item again
+        if(!isFolderNavItem){
+            this.addFolderNavItem(folderObject);
+        }
         folderObject.folders.forEach(element => { this.putFolderItems(element, folderSection); });
         folderObject.files.forEach((element) => {
             const fileElement = document.createElement('div');
@@ -32,15 +37,18 @@ class MyFiles {
             fileSection.appendChild(fileElement); 
         })
     }
-    static navItemContainer = document.getElementById('file_nav_item_con');
 
-    static addFolderNavItem(name,folderObject){
+    static addFolderNavItem(folderObject){
         const navElement = document.createElement('button');
         navElement.classList.add('file_nav_item','subtitle_text');
-        navElement.textContent = name;
-        
+        navElement.textContent = folderObject.name;
+        if(this.navItemContainer.firstChild){
+            const  chevronRight = UserFiles.convertStringToHTMLELement(Icons.chevronRight);
+            chevronRight.classList.add('file_nav_item_seperater')
+            this.navItemContainer.appendChild(chevronRight);
+        }
         this.navItemContainer.appendChild(navElement);
-        navElement.componentObject = new folderComponent(navElement,folderObject)
+        navElement.componentObject = new folderNavItemComponent(navElement,folderObject)
     }
     static putFolderItems(folderObject, container) {
         const folderElement = document.createElement('div');

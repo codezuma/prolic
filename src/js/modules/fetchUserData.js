@@ -1,7 +1,7 @@
 import { UserFiles,fileComponent,folderComponent,MyFiles, ContextMenuParent } from './module.js'
 class userData {
     static userObject = JSON.parse(sessionStorage.getItem("userObject"));
-    
+
     static updateFolderSection(){
         MyFiles.show(this.userObject);
     }

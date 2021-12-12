@@ -60,6 +60,14 @@ class UserFiles {
        return (extensionObjects.find((ele)=>!(ele.extensions.indexOf(extension) ===-1))).fileType || 'other'
 
     }
+    static convertStringToHTMLELement(String){
+        var div = document.createElement('div');
+        div.innerHTML = String.trim();
+      
+        // Change this to div.childNodes to support multiple top-level nodes
+        return div.firstChild; 
+      
+    }
 
 }
 export { UserFiles };

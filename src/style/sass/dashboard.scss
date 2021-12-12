@@ -70,6 +70,7 @@ body {
     width: 100vw;
     height: 100vh;
     display: grid;
+    user-select: none;
     grid-template-columns: var(--aside_width) 1fr var(--aside_width);
     grid-template-rows: 80px 1fr;
     hr{

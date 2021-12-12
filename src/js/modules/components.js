@@ -48,15 +48,14 @@ class fileComponent{
 class folderComponent{
     constructor(folderElement,folderObject){
        this.folderObject = folderObject;
+       this.folderElement = folderElement;
        let componentObject =this;
        folderElement.addEventListener('dblclick',()=>{componentObject.open()})
     }
     componentType = 'folder';
     getFileName(){
-        const pathSplitArray = this.path.split("/");
-        return  pathSplitArray.pop();
-    }
-    
+        return  this.path.split("/").pop();
+    }    
     open(){
      MyFiles.show(this.folderObject);
     }
@@ -66,4 +65,12 @@ class folderComponent{
 
     
 }
-export{fileComponent,folderComponent};
+class folderNavItemComponent extends folderComponent{
+    open(){
+      while(this.folderElement.nextSibling){
+        this.folderElement.nextSibling.remove();
+      }
+        MyFiles.show(this.folderObject,true);
+    }
+}
+export{fileComponent,folderComponent,folderNavItemComponent};

@@ -215,6 +215,12 @@ document.getElementById('signin_button').addEventListener('click', () => {
             }).then((response) => {
                 response.text().then((text) => {
                    const response =  JSON.parse(text);
+                   //changing folder name for security reasons;
+                  let userObject = JSON.parse(response.userObject);
+                  userObject.name = "MyDrive";
+                  response.userObject = JSON.stringify(userObject);
+                  
+                  //saving them in session to access them in dashbiard page;
                    sessionStorage.setItem("userObject",response.userObject);
                    sessionStorage.setItem("recentItems",response.recentItems);
                     switch (response.loginResult) {
