@@ -60,26 +60,27 @@ class folderComponent {
     }
 
     open() {
+        this.refreshFolder();
         MyFiles.show(this.folderObject);
     }
 
-    createNewFolder() {
+    async createNewFolder() {
+        console.log('create new folder',this);
         let requestBody = new FormData();
-        requestBody.append("folderPath", this.folderObject.path)
-            /
-            requestBody.append("folderName", "newfolder");
-        fetch('../backend/database/createSubFolder.php', {
+        requestBody.append("folderPath", this.folderObject.path);
+        requestBody.append("folderName", "newfolder");
+        await fetch('../backend/database/createSubFolder.php', {
             method: 'POST',
             body: requestBody
-        }).then((response) => {
-            response.json().then(data => {
+                })
+               .then( (response) => {
+                response.json().then(async (data) => {
                 if (data.folderExits) {
                     alert('folder exits try another name');
                 }
                 else if (data.folderCreated) {
-                    //as folder is created web update files from folder
-                    userData.updateFolderSection();
-                    this.refreshFolder();
+                       //as folder is created web update files from folder
+                       await userData.refreshUserData(()=>{this.open()});        
                 }
             })
         })
@@ -87,17 +88,37 @@ class folderComponent {
 
     refreshFolder() {
         const folderPath = this.folderObject.path;
+        // this funtion returns searched folderobject with following path by recursive 
+        console.log('searched Object',this.folderObject);
+        let foundObject;
         function findFolderObject(folderObject) {
-            console.log(folderObject.path, folderPath);
-            if (folderObject.folders.length > 0) {
-                return folderObject.folders.find((ele) => { return findFolderObject(ele); });
+            /* if((folderObject.path === folderPath)){
+               return true;
             }
+            else{
+                if (folderObject.folders.length > 0) {
+                    return folderObject.folders.find((ele) => {return findFolderObject(ele); });
+                }
+                else{
+                    return false;
+                }
+            } */
+            if (folderObject.path === folderPath){
+                foundObject = folderObject;
+                return true
+                }
             else {
-                console.log((folderObject.path === folderPath))
-                return (folderObject.path === folderPath);
+                if (folderObject.folders.length > 0) {
+                return folderObject.folders.find((ele) => { return findFolderObject(ele); });
+                 }
             }
-        }
-        console.log(findFolderObject(userData.userObject));
+        
+           
+        };
+        findFolderObject(userData.userObject);
+        this.folderObject =  foundObject;
+        console.log('foundljb Object',this.folderObject);
+
     }
 }
 class folderNavItemComponent extends folderComponent {
