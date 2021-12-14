@@ -1,6 +1,7 @@
 import { fileComponent, userData, MyFiles,dialogbox, UserFiles, navbar, ContextMenu, inputBox, passwordInputBox, emailInputBox, FormBox, DialogBox, OtpFormBox, Backend } from './modules/module.js';
-document.querySelector(".size_toggle_btn").addEventListener('click', () => { navbar.toggleSize(); });
+document.querySelector(".size_toggle_btn").addEventListener('click', () => {userData.refreshUserData(); navbar.toggleSize(); });
 document.querySelector("#upload_file_button").addEventListener('click', () => { UserFiles.getFileFromUser() });
+userData.setUserObject();
 userData.updateRecentItemsSection();
 userData.updateFolderSection();
 ContextMenu.start();
@@ -28,4 +29,4 @@ ContextMenu.start();
             })
 
         })
-    })();
+})();

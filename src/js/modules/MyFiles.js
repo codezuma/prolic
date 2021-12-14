@@ -1,24 +1,24 @@
 import { folderNavItemComponent } from "./components.js";
 import { Icons } from "./Icons.js";
-import { UserFiles,userData,fileComponent,ContextMenuParent,folderComponent} from "./module.js"
+import { UserFiles, userData, fileComponent, ContextMenuParent, folderComponent } from "./module.js"
 
 class MyFiles {
-    static removeChildren (parent){
+    static removeChildren(parent) {
         while (parent.firstChild) {
             parent.firstChild.remove()
         }
     }
     static navItemContainer = document.getElementById('file_nav_item_con');
 
-    static show(folderObject,isFolderNavItem = false) {
+    static show(folderObject, isFolderNavItem = false) {
         const folderSection = document.getElementById('MyFiles_folder_section');
         const fileSection = document.getElementById('MyFiles_files_section');
-        
+
         this.removeChildren(folderSection);
         this.removeChildren(fileSection);
-        
+
         //if folderElement is nav Item there is no need to add folder nav item again
-        if(!isFolderNavItem){
+        if (!isFolderNavItem) {
             this.addFolderNavItem(folderObject);
         }
         folderObject.folders.forEach(element => { this.putFolderItems(element, folderSection); });
@@ -28,33 +28,33 @@ class MyFiles {
 
             let fileType = UserFiles.getFileTypeFromExtension((element.name.split('.')).pop())
 
-            fileElement.componentObject = new fileComponent(fileElement,element.name,element.path.substring(7),fileType);
+            fileElement.componentObject =fileComponent(fileElement, element.name, element.path.substring(7), fileType);
             new ContextMenuParent(fileElement);
             const fileElementContent = `<div class="file_item_icon file_icon" data-file_type="${fileType}"></div>
                                         <div class="file_item_name">${element.name} </div>`;
-         
+
             fileElement.innerHTML = fileElementContent;
-            fileSection.appendChild(fileElement); 
+            fileSection.appendChild(fileElement);
         })
     }
 
-    static addFolderNavItem(folderObject){
+    static addFolderNavItem(folderObject) {
         const navElement = document.createElement('button');
-        navElement.classList.add('file_nav_item','subtitle_text');
+        navElement.classList.add('file_nav_item', 'subtitle_text');
         navElement.textContent = folderObject.name;
-        if(this.navItemContainer.firstChild){
-            const  chevronRight = UserFiles.convertStringToHTMLELement(Icons.chevronRight);
+        if (this.navItemContainer.firstChild) {
+            const chevronRight = UserFiles.convertStringToHTMLELement(Icons.chevronRight);
             chevronRight.classList.add('file_nav_item_seperater')
             this.navItemContainer.appendChild(chevronRight);
         }
         this.navItemContainer.appendChild(navElement);
-        navElement.componentObject = new folderNavItemComponent(navElement,folderObject)
+        navElement.componentObject =  new folderNavItemComponent(navElement, folderObject);
     }
     static putFolderItems(folderObject, container) {
         const folderElement = document.createElement('div');
         folderElement.classList.add('folder_item', 'flex');
 
-        folderElement.componentObject = new folderComponent(folderElement, folderObject);
+        folderElement.componentObject =  new folderComponent(folderElement, folderObject) ;
         new ContextMenuParent(folderElement);
 
 
@@ -74,12 +74,12 @@ class MyFiles {
 
 
 }
-class FileNavItem{
+class FileNavItem {
     static navItemContainer = document.getElementById('file_nav_item_con');
 
-    static add_file_nav_item(name){
+    static add_file_nav_item(name) {
         const navElement = document.createElement('button');
-        navElement.classList.add('file_nav_item','subtitle_text');
+        navElement.classList.add('file_nav_item', 'subtitle_text');
         this.navItemContainer.appendChild(navElement);
     }
 }

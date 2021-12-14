@@ -341,8 +341,8 @@ button[type='submit']:active {
 
 /* line 1, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_contextMenu.scss */
 .contextMenuCon {
-  padding: 15px 0;
-  width: 300px;
+  padding: 10px 0;
+  width: 250px;
   height: auto;
   background-color: var(--white_color);
   position: absolute;
@@ -354,7 +354,7 @@ button[type='submit']:active {
 /* line 12, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_contextMenu.scss */
 .contextMenuItem {
   width: 100%;
-  height: 50px;
+  height: 40px;
   padding: 0 15px;
   display: flex;
   align-items: center;
@@ -363,16 +363,16 @@ button[type='submit']:active {
 
 /* line 19, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_contextMenu.scss */
 .contextMenuItem svg {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   stroke: var(--secondary_text2);
 }
 
 /* line 24, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_contextMenu.scss */
 .contextMenuItem .contextMenuName {
   margin-left: 16px;
-  font-size: 1rem;
-  line-height: 1.4rem;
+  font-size: 0.85rem;
+  line-height: 1.19rem;
   font-weight: 600;
   color: var(--secondary_text2);
 }

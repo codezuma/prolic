@@ -1,5 +1,5 @@
-<?php
-
+ <?php
+require __DIR__."./getUserData.php";
 // Set session variables
 session_start();
  $userEmail = $_POST["email"];
@@ -12,6 +12,7 @@ session_start();
   echo "Connection failed: " . $db->connect_error;
   die();
 }
+
   $output['loginResult'] = isEmailAvailable($userEmail)? "email_not_available" :checkPassword($userEmail);
   if($output['loginResult'] == 'loging_in'){
     $id =  getUserId($userEmail);
@@ -38,83 +39,5 @@ session_start();
     $GET_USER_ID_SQL_QUERY = "SELECT password FROM USERS WHERE email = '$email'";
     $data = $db->query($GET_USER_ID_SQL_QUERY);
     return ($data->fetch_assoc())["password"];
-  }
-  function getUserId($email){
-    global $db;
-    $GET_USER_ID_SQL_QUERY = "SELECT id FROM USERS WHERE email = '$email'";
-    $data = $db->query($GET_USER_ID_SQL_QUERY);
-    return ($data->fetch_assoc())["id"];
-  }
-  function getRecentItems($id){
-    global $db;
-    $GET_RECENTITEMS_SQL_QUERY = "SELECT file_name,type,path,upload_date,size FROM USER$id ORDER BY upload_date DESC";
-    $data = $db->query($GET_RECENTITEMS_SQL_QUERY);
-    $recentItems = [];
-    while($row = $data->fetch_assoc()) {
-      $recentItems[] = new recentItem($row['file_name'],$row['upload_date'],$row['path'],$row['size'],$row['type']);  
-    }
-  
-    return $recentItems;
-  }
-  class folder{
-    public $name;
-    public $folders;
-    public $files;
-    function __construct($path)
-    {
-     $this->name = basename($path);
-     $this->folders = $this->getDirectories($path);
-     $this->files = $this->getFiles($path);
-    }
-    function getDirectories(string $path) : array
-    {
-    $directories = [];
-    $items = scandir($path);
-    foreach ($items as $item) {
-        if($item == '..' || $item == '.')
-            continue;
-        if(is_dir($path.'/'.$item))
-            $directories[] = new folder("$path/$item");
-    }
-    return $directories;
-   }
-
-   function getFiles(string $path) : array
-   {
-   $files = [];
-   $items = scandir($path);
-   foreach ($items as $item) {
-       if($item == '..' || $item == '.')
-           continue;
-       if(is_file($path.'/'.$item))
-           $files[] = new fileObject($path.'/'.$item);
-   }
-   return $files;
-  }
-  }
-  class fileObject{
-    public $name;
-    public $path;
-    function __construct($path)
-    {
-      $this->name =  basename($path);
-      $this->path =  $path;
-    } 
-  }
-
-  class recentItem{
-    public $name;
-    public $modifiedDate;
-    public $size;
-    public $type;
-    public $path;
-    function __construct($name,$modifiedDate,$path,$size,$fileType)
-    {
-      $this->name = $name;
-      $this->modifiedDate = $modifiedDate;
-      $this->size = $size;
-      $this->type = $fileType;
-      $this->path = $path;
-    }
   }
   echo json_encode($output);
