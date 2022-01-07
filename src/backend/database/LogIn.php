@@ -16,7 +16,7 @@ session_start();
   $output['loginResult'] = isEmailAvailable($userEmail)? "email_not_available" :checkPassword($userEmail);
   if($output['loginResult'] == 'loging_in'){
     $id =  getUserId($userEmail);
-    $userObject = new folder( "../../../drive/user_$id");
+    $userObject = new folder("../../../drive/user_".$id);
     $output['userObject'] =  json_encode($userObject);
 
     $recentItems = getRecentItems($id);

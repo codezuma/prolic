@@ -1,10 +1,13 @@
-import { fileComponent, userData, MyFiles,dialogbox, UserFiles, navbar, ContextMenu, inputBox, passwordInputBox, emailInputBox, FormBox, DialogBox, OtpFormBox, Backend } from './modules/module.js';
+
+// CommonJS
+import { fileComponent,swap, userData, MyFiles,dialogbox, UserFiles, navbar, ContextMenu, inputBox, passwordInputBox, emailInputBox, FormBox, DialogBox, OtpFormBox, Backend } from './modules/module.js';
 document.querySelector(".size_toggle_btn").addEventListener('click', () => {userData.refreshUserData(); navbar.toggleSize(); });
 document.querySelector("#upload_file_button").addEventListener('click', () => { UserFiles.getFileFromUser() });
 userData.setUserObject();
 userData.updateRecentItemsSection();
 userData.updateFolderSection();
 ContextMenu.start();
+// iife for darchboard items switching 
 (function () {
         const dashboardItems = document.getElementsByClassName('dashboard_item');
         const navItems = document.getElementsByClassName('nav_item');
@@ -30,3 +33,5 @@ ContextMenu.start();
 
         })
 })();
+swap.start();
+swap.fire({body:"heloo world"});

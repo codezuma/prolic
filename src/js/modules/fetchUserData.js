@@ -11,7 +11,6 @@ class userData {
                 data.userObject.name = "MyDrive";
                 userData.userObject = data.userObject;
                 console.log(userData.userObject);
-                console.log("second");
                 this.updateRecentItemsSection(data.recentItems);
                 callback();
             })

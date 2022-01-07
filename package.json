@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "sass": "^1.42.1"
+    "sass": "^1.42.1",
+    "sweetalert2": "^11.3.0"
   },
-  "devDependencies": {},
   "description": ""
 }

@@ -5,7 +5,7 @@ import { UserFiles, userData, fileComponent, ContextMenuParent, folderComponent 
 class MyFiles {
     static removeChildren(parent) {
         while (parent.firstChild) {
-            parent.firstChild.remove()
+            parent.firstChild.remove(); 
         }
     }
     static navItemContainer = document.getElementById('file_nav_item_con');
@@ -28,7 +28,7 @@ class MyFiles {
 
             let fileType = UserFiles.getFileTypeFromExtension((element.name.split('.')).pop())
 
-            fileElement.componentObject =fileComponent(fileElement, element.name, element.path.substring(7), fileType);
+            fileElement.componentObject =new fileComponent(fileElement, element.name, element.path.substring(7), fileType);
             new ContextMenuParent(fileElement);
             const fileElementContent = `<div class="file_item_icon file_icon" data-file_type="${fileType}"></div>
                                         <div class="file_item_name">${element.name} </div>`;
@@ -70,7 +70,7 @@ class MyFiles {
         folderElement.appendChild(folderName);
 
         container.appendChild(folderElement);
-    }
+    }2
 
 
 }

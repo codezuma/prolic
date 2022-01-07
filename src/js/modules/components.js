@@ -89,7 +89,6 @@ class folderComponent {
     refreshFolder() {
         const folderPath = this.folderObject.path;
         // this funtion returns searched folderobject with following path by recursive 
-        console.log('searched Object',this.folderObject);
         let foundObject;
         function findFolderObject(folderObject) {
             /* if((folderObject.path === folderPath)){
@@ -111,14 +110,14 @@ class folderComponent {
                 if (folderObject.folders.length > 0) {
                 return folderObject.folders.find((ele) => { return findFolderObject(ele); });
                  }
-            }
-        
-           
+            }           
         };
         findFolderObject(userData.userObject);
         this.folderObject =  foundObject;
-        console.log('foundljb Object',this.folderObject);
+    }
+    async uploadFile(){
 
+        UserFiles.getFileFromUser(this.folderObject.path);
     }
 }
 class folderNavItemComponent extends folderComponent {

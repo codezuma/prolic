@@ -1,5 +1,7 @@
+import {userData} from "./fetchUserData.js"
 class UserFiles {
-    static getFileFromUser(path = "") {
+    static getFileFromUser(path = userData.userObject.path) {
+        console.log(path);
         let inputElement = document.createElement("input");
         inputElement.setAttribute("type", "file");
         inputElement.click();
@@ -13,7 +15,8 @@ class UserFiles {
                 method: "POST",
                 body: fileFormData,
             }).then((response) => {
-                response.text().then((text) => {
+                response.json().then((text) => {
+                    console.log(text);
                 });
             });
         });

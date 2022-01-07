@@ -24,19 +24,18 @@ function getUserId($email){
     $data = $db->query($GET_USER_ID_SQL_QUERY);
     return ($data->fetch_assoc())["id"];
   }
-   $id = getUserId($email);
-   $filePath =  "./drive/user_$id/".$path.$file['name'];
+   $filePath = $path."/".$file['name'];
     
    function saveInDrive(){
      global $file,$filePath;
-    $saveFilePath = "../../../".$filePath;
-    return @move_uploaded_file($file["tmp_name"],$saveFilePath);
+    return @move_uploaded_file($file["tmp_name"],$filePath);
    }
    function saveInDatabase(){
    global $file,$db,$filePath,$id,$type;
    $SAVE_FILE_SQL_QUERY = "INSERT INTO USER$id(file_name,type,path,size) VALUES('$file[name]','$type','$filePath','$file[size]')";
    return $db->query($SAVE_FILE_SQL_QUERY);
    }
+
    $output[] =  ((saveInDrive() and saveInDatabase())? "success" :"error") ;
    echo json_encode($output);
 ?>

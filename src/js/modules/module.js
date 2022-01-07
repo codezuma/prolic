@@ -8,3 +8,4 @@ export {userData} from "./fetchUserData.js";
 export {fileComponent,folderComponent,folderNavItemComponent} from "./components.js";
 export {MyFiles} from "./MyFiles.js"
 export {Icons} from './Icons.js'
+export {swap} from "./swapAlert.js"

@@ -4,6 +4,7 @@
 @import "./particals/loader";
 @import "./particals/inputElements";
 @import "./particals/contextMenu";
+@import "./particals/swap_alert";
 
 body {
     display: flex;
@@ -73,6 +74,7 @@ body {
     user-select: none;
     grid-template-columns: var(--aside_width) 1fr var(--aside_width);
     grid-template-rows: 80px 1fr;
+    
     hr{
         height: 1.5px;
         width: 110%;

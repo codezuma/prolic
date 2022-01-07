@@ -32,15 +32,23 @@ class ContextMenuParent {
     }
     addContetMenuItems(ContextItemCon) {
         let componentObject = this.htmlElement.componentObject;
-        let ContextMenuType = componentObject.componentType;
+        let contextMenuType = componentObject.componentType;
         let fileContextMenuItems = [new ContextMenuItem('Open', Icons.open, () => { componentObject.open(); }),
-        new ContextMenuItem('Download', Icons.download, () => { componentObject.download() })
+        new ContextMenuItem('Download', Icons.download, () => { componentObject.download() }),
+        new ContextMenuItem('Add to Starred',Icons.star,()=>{}),
+        new ContextMenuItem('Rename',Icons.edit,()=>{}),
+        new ContextMenuItem('Delete',Icons.trash,()=>{}),
         ];
         let folderContextMenuItems = [new ContextMenuItem('Open', Icons.open, () => { componentObject.open(); }),
-        new ContextMenuItem('New Folder', Icons.folderOpen, () => { componentObject.createNewFolder(); })
+        new ContextMenuItem('Upload file',Icons.filePlus,()=>{componentObject.uploadFile()}),
+        new ContextMenuItem('New Folder', Icons.folderOpen, () => { componentObject.createNewFolder(); }),
+        new ContextMenuItem('Add to Starred',Icons.star,()=>{}),
+        new ContextMenuItem('Rename',Icons.edit,()=>{}),
+        new ContextMenuItem('Delete',Icons.trash,()=>{}),
+        
         ];
         let contextMenuItems;
-        switch (ContextMenuType) {
+        switch (contextMenuType) {
             case 'file':
                 contextMenuItems = fileContextMenuItems;
                 break;
