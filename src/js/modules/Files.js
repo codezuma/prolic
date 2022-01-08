@@ -1,7 +1,6 @@
 import {userData} from "./fetchUserData.js"
 class UserFiles {
     static getFileFromUser(path = userData.userObject.path) {
-        console.log(path);
         let inputElement = document.createElement("input");
         inputElement.setAttribute("type", "file");
         inputElement.click();

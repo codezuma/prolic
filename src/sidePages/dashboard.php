@@ -188,7 +188,32 @@
 
                 </div>
             </div>
-            <div class="dashboard_item" data-item_name="shared" data-state="non_active">starred</div>
+            <div class="dashboard_item" data-item_name="shared" data-state="non_active">
+                    <div class="file_nav_item_con flex" id="file_nav_item_con" ></div>
+               <hr>
+               <br>
+             <div class="folder_section">
+                    <h3 class="subtitle_text">Folders</h3>
+                    <br>
+                    <div class="folders_con flex" id="MyFiles_folder_section">
+                        <!-- <div class="folder_item flex">
+                            <div class="folder_icon file_icon" data-file_type="folder"></div>
+                            <div class="folder_name">Documents</div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="file_section">
+                    <h3 class="subtitle_text">Files</h3>
+                    <br>
+                    <div class="files_con flex" id="MyFiles_files_section">
+                     <!--    <div class="file contextMenuParent" data-contextMenuType="folder">
+                            <div class="file_item_icon file_icon" data-file_type="folder"></div>
+                            <div class="file_item_name">Human Cetered design </div>
+                        </div> -->
+                    </div>
+
+                </div>
+            </div>
             <div class="dashboard_item" data-item_name="starred" data-state="non_active">shared</div>
             <div class="dashboard_item" data-item_name="trash" data-state="non_active">trash</div>
         </main>

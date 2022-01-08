@@ -102,10 +102,7 @@ class folderComponent {
                     return false;
                 }
             } */
-            if (folderObject.path === folderPath){
-                foundObject = folderObject;
-                return true
-                }
+            if (folderObject.path === folderPath){  foundObject = folderObject; return true;}
             else {
                 if (folderObject.folders.length > 0) {
                 return folderObject.folders.find((ele) => { return findFolderObject(ele); });
@@ -116,7 +113,6 @@ class folderComponent {
         this.folderObject =  foundObject;
     }
     async uploadFile(){
-
         UserFiles.getFileFromUser(this.folderObject.path);
     }
 }

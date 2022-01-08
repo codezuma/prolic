@@ -13,7 +13,7 @@ $white_color:#fff; */
   --blue_color500:#4E57D3;
   --blue_color400:#7883FF;
   --blue_color200:#2B85FF;
-  --blue_color100:#DBD9E6;
+  --blue_color100:#D4E2FC;
   --blue_color50:#EFF3FE;
   --blue_color100Light:#e8f0fe;
   --secondary_color:#7883FF;
@@ -28,24 +28,34 @@ $white_color:#fff; */
   --grey200:#efefef;
   --white_color:#fdfdfd;
   --pure_white:#fff;
+  --red_color50:#FFEFED;
   --red_color:#FF4642;
+  --red_color200:#FED7D2;
   --yellow_color:#FFC94B;
-  --purple_color:#8A38CB;
+  --v:#8A38CB;
   --warning:rgb(177, 4, 4);
   --success:rgb(0, 105, 49);
+  --green_color50:#E6F2ED;
+  --green_color100:#ADDEC9;
+  --green_color300:#06C167;
+  --success:rgb(0, 105, 49);
+  --yellow_color50:#FFFAF0;
+  --yellow_color600:#BC8B2C;
+  --yellow_color300:#FFCF70;
+  --yellow_color100:#FFF2D9;
 }
 
-/* line 36, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
+/* line 46, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
 .primary_text {
   color: var(--primary_text);
 }
 
-/* line 39, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
+/* line 49, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
 .secondary_text {
   color: var(--secondary_text);
 }
 
-/* line 42, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
+/* line 52, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_colors.scss */
 .primary_text {
   color: var(--primary_text);
 }
@@ -387,40 +397,109 @@ button[type='submit']:active {
 .swap_alert_container {
   position: absolute;
   z-index: 999;
-  left: 20px;
+  right: 30px;
   top: 40px;
+  overflow: none;
   height: auto;
+  display: flex;
+  transition: 1s;
+  flex-direction: column;
+  gap: 10px;
   width: auto;
 }
 
-/* line 8, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
+/* line 12, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
 .swap_alert_container .swap_alert {
   padding: 10px .5rem;
   display: flex;
   align-items: center;
-  height: 50px;
+  min-height: 50px;
+  max-width: 320px;
   gap: 1rem;
-  background-color: var(--blue_color50);
-  border: 2px solid var(--blue_color500);
-  border-radius: 4px;
+  border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
 }
 
-/* line 21, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
+/* line 25, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
+.swap_alert_container .swap_alert[data-alertType="error"] {
+  background-color: var(--red_color50);
+  border: 1.5px solid var(--red_color200);
+}
+
+/* line 28, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
+.swap_alert_container .swap_alert[data-alertType="error"] .swap_alert_body {
+  color: var(--warning);
+}
+
+/* line 31, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
+.swap_alert_container .swap_alert[data-alertType="error"] .swap_alert_icon svg {
+  stroke: var(--warning);
+}
+
+/* line 35, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
+.swap_alert_container .swap_alert[data-alertType="info"] {
+  background-color: var(--blue_color50);
+  border: 1.5px solid var(--blue_color100);
+}
+
+/* line 38, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
+.swap_alert_container .swap_alert[data-alertType="info"] .swap_alert_body {
+  color: var(--blue_color500);
+}
+
+/* line 41, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
+.swap_alert_container .swap_alert[data-alertType="info"] .swap_alert_icon svg {
+  stroke: var(--blue_color500);
+}
+
+/* line 45, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
+.swap_alert_container .swap_alert[data-alertType="success"] {
+  background-color: var(--green_color50);
+  border: 1.5px solid var(--green_color100);
+}
+
+/* line 49, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
+.swap_alert_container .swap_alert[data-alertType="success"] .swap_alert_body {
+  color: var(--success);
+}
+
+/* line 52, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
+.swap_alert_container .swap_alert[data-alertType="success"] .swap_alert_icon svg {
+  stroke: var(--success);
+}
+
+/* line 56, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
+.swap_alert_container .swap_alert[data-alertType="warning"] {
+  background-color: var(--yellow_color50);
+  border: 1.5px solid var(--yellow_color100);
+}
+
+/* line 59, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
+.swap_alert_container .swap_alert[data-alertType="warning"] .swap_alert_body {
+  color: var(--yellow_color600);
+}
+
+/* line 63, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
+.swap_alert_container .swap_alert[data-alertType="warning"] .swap_alert_icon svg {
+  stroke: var(--yellow_color600);
+}
+
+/* line 68, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
 .swap_alert_container .swap_alert_icon {
   width: 24px;
   height: 24px;
 }
 
-/* line 24, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
+/* line 71, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
 .swap_alert_container .swap_alert_icon svg {
   stroke: var(--blue_color500);
 }
 
-/* line 28, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
+/* line 75, ../../../../../xampp/htdocs/prolic/src/style/sass/particals/_swap_alert.scss */
 .swap_alert_container .swap_alert_close_button {
-  background-color: none;
+  background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 /* line 9, ../../../../../xampp/htdocs/prolic/src/style/sass/dashboard.scss */

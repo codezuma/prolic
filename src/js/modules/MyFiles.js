@@ -70,7 +70,7 @@ class MyFiles {
         folderElement.appendChild(folderName);
 
         container.appendChild(folderElement);
-    }2
+    }
 
 
 }
