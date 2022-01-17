@@ -1,6 +1,7 @@
 import {userData} from "./fetchUserData.js"
+import { MyFiles } from "./MyFiles.js";
 class UserFiles {
-    static getFileFromUser(path = userData.userObject.path) {
+    static async getFileFromUser(path = userData.userObject.path,folderObject) {
         let inputElement = document.createElement("input");
         inputElement.setAttribute("type", "file");
         inputElement.click();
@@ -14,8 +15,13 @@ class UserFiles {
                 method: "POST",
                 body: fileFormData,
             }).then((response) => {
-                response.json().then((text) => {
-                    console.log(text);
+                response.text().then((text) => {
+                    userData.refreshUserData(()=>{
+                         userData.refreshUserData(()=>{this.open()});        
+                        this.refreshFolder();
+                        console.log(this);
+                        this.open();
+                    })
                 });
             });
         });
@@ -58,8 +64,8 @@ class UserFiles {
              }
 
             ];
-        
-       return (extensionObjects.find((ele)=>!(ele.extensions.indexOf(extension) ===-1))).fileType || 'other'
+        const ExtensionObject = (extensionObjects.find((ele)=>!(ele.extensions.indexOf(extension) ===-1)));
+       return ExtensionObject ? ExtensionObject.fileType :'other';
 
     }
     static convertStringToHTMLELement(String){

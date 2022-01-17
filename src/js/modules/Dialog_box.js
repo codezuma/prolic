@@ -29,6 +29,17 @@ class DialogBox{
            tl.call(()=>{resolve()},null,">");
        })
     }
+    promt(userData = {heading,subHeading,primaryAction,secondaryAction}){
+        const defaultData = {
+            heading : "",
+            subHeading : "",
+            primaryAction : "Ok",
+            secondaryAction : "Cancel"
+        }       
+
+        const promtData = {...defaultData,...userData};
+        console.log(promtData);
+    }
    }
    const dialogbox = new DialogBox(document.getElementsByClassName('dialog_box_wrap')[0]);
    

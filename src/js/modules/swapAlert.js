@@ -6,8 +6,8 @@ static fire(newData={}){
    const shownTime = 3;
     gsap.timeline()
     .call(()=>{alert.show();})
-/*     .addPause(shownTime,()=>{alert.close()});
- */}
+    .addPause(shownTime,()=>{alert.close()});
+}
 static start(){
     const container = document.createElement('div');
     container.classList.add('swap_alert_container');

@@ -8,6 +8,9 @@ $type = $_POST["type"];
 
 $output = [];
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 /* 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -37,6 +40,7 @@ function getUserId($email){
    }
 
    $output[] =  ((saveInDrive() and saveInDatabase())? "success" :"error") ;
-   echo json_encode($output);
+    json_encode($output);
+   echo $file["error"];
 ?>
 

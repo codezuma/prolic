@@ -1,7 +1,7 @@
 
 // CommonJS
 import { fileComponent,swap, userData, MyFiles,dialogbox, UserFiles, navbar, ContextMenu, inputBox, passwordInputBox, emailInputBox, FormBox, DialogBox, OtpFormBox, Backend } from './modules/module.js';
-document.querySelector(".size_toggle_btn").addEventListener('click', () => {swap.fire({body:"heloo world",type:"success"});navbar.toggleSize(); });
+document.querySelector(".size_toggle_btn").addEventListener('click', () => {swap.fire({body:"your file got uploaded",type:"warning"});navbar.toggleSize(); });
 document.querySelector("#upload_file_button").addEventListener('click', () => { UserFiles.getFileFromUser() });
 userData.setUserObject();
 userData.updateRecentItemsSection();

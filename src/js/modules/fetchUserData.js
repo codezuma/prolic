@@ -5,12 +5,11 @@ class userData {
     static setUserObject(userObject = JSON.parse(sessionStorage.getItem("userObject"))) {
         this.userObject = userObject;
     }
-    static async refreshUserData(callback) {
+    static async refreshUserData(callback=()=>{}) {
        return fetch('../backend/database/refreshData.php').then((response) => {
             response.json().then((data) => {
                 data.userObject.name = "MyDrive";
                 userData.userObject = data.userObject;
-                console.log(userData.userObject);
                 this.updateRecentItemsSection(data.recentItems);
                 callback();
             })

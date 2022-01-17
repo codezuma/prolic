@@ -65,7 +65,6 @@ class folderComponent {
     }
 
     async createNewFolder() {
-        console.log('create new folder',this);
         let requestBody = new FormData();
         requestBody.append("folderPath", this.folderObject.path);
         requestBody.append("folderName", "newfolder");
@@ -91,29 +90,18 @@ class folderComponent {
         // this funtion returns searched folderobject with following path by recursive 
         let foundObject;
         function findFolderObject(folderObject) {
-            /* if((folderObject.path === folderPath)){
-               return true;
-            }
-            else{
-                if (folderObject.folders.length > 0) {
-                    return folderObject.folders.find((ele) => {return findFolderObject(ele); });
-                }
-                else{
-                    return false;
-                }
-            } */
             if (folderObject.path === folderPath){  foundObject = folderObject; return true;}
             else {
                 if (folderObject.folders.length > 0) {
                 return folderObject.folders.find((ele) => { return findFolderObject(ele); });
-                 }
+                }
             }           
         };
         findFolderObject(userData.userObject);
         this.folderObject =  foundObject;
     }
     async uploadFile(){
-        UserFiles.getFileFromUser(this.folderObject.path);
+        UserFiles.getFileFromUser(this.folderObject.path,this);
     }
 }
 class folderNavItemComponent extends folderComponent {
