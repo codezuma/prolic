@@ -30,13 +30,13 @@ session_start();
   }
   function isEmailAvailable($email){
     global $db;
-    $CHECK_USER_SQL_QUERY = "SELECT email FROM USERS WHERE email = '$email'";
+    $CHECK_USER_SQL_QUERY = "SELECT email FROM users  WHERE email = '$email'";
     $userData =  $db->query($CHECK_USER_SQL_QUERY);
     return ($userData->num_rows===0);
   }
   function getPassword($email){
     global $db;
-    $GET_USER_ID_SQL_QUERY = "SELECT password FROM USERS WHERE email = '$email'";
+    $GET_USER_ID_SQL_QUERY = "SELECT password FROM users WHERE email = '$email'";
     $data = $db->query($GET_USER_ID_SQL_QUERY);
     return ($data->fetch_assoc())["password"];
   }
