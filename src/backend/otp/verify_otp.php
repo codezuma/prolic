@@ -8,7 +8,7 @@ if ($db->connect_error) {
   echo "Connection failed: " . $db->connect_error;
 }
 
-$userData =  $db->query("SELECT * FROM OTP WHERE email = '$email' AND otp = '$user_otp'");
+$userData =  $db->query("SELECT * FROM otp WHERE email = '$email' AND otp = '$user_otp'");
 if ($userData->num_rows != 0) {
   echo saveUser($email, $password);
 } else {
@@ -31,7 +31,7 @@ function createRowInUsers($email, $password)
 function getUserId($email)
 {
   global $db;
-  $GET_USER_ID_SQL_QUERY = "SELECT id FROM USERS WHERE email = '$email'";
+  $GET_USER_ID_SQL_QUERY = "SELECT id FROM users WHERE email = '$email'";
   $data = $db->query($GET_USER_ID_SQL_QUERY);
   return ($data->fetch_assoc())["id"];
 }
