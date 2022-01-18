@@ -80,7 +80,7 @@ $mail = new PHPMailer(true);
       if(!$mail->Send()) {
         echo 'mail_not_send';
       } else {
-        $SAVE_OTP_SQL_QUERY = "Insert INTO OTP(email,type,otp) VALUES ('$email','$otp_type','$otp')";
+        $SAVE_OTP_SQL_QUERY = "Insert INTO otp(email,type,otp) VALUES ('$email','$otp_type','$otp')";
         $db->query($SAVE_OTP_SQL_QUERY);
         echo 'mail_send';
       }
