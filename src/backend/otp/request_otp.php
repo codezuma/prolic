@@ -21,14 +21,14 @@ $mail = new PHPMailer(true);
     $mail->SMTPSecure = "tls";
     $mail->Port       =  587;
     $mail->Host       = "smtp.gmail.com";
-    $mail->Username   = "prolicmail@gmail.com";
-    $mail->Password   = "prolic123";
+    $mail->Username   = "prolic.otp@gmail.com";
+    $mail->Password   = "IamChanp";
 //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
 //Recipients
     $mail->IsHTML(true);
     $mail->AddAddress("$email", "Chandresh patidar");
-    $mail->SetFrom("patidarchandresh2002@gmail.com", "Prolic");
+    $mail->SetFrom("prolic.otp@gmail.com", "Prolic");
     $mail->Subject = "Prolic email verification OTP";
     // generating otp
     $otp_array = [];
