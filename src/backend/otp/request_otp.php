@@ -73,7 +73,6 @@ $mail = new PHPMailer(true);
   function CheckUser($email){
       global $db;
       $userData =  $db->query("SELECT id FROM users WHERE email = '$email'");
-      echo $userData;
       return ($userData->num_rows===0);
   }
     if(CheckUser($email)){
